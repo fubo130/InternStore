@@ -1,0 +1,7 @@
+<import src="../../template/SearchBar"/>
+
+<view class="home_bg">
+    <view class="search_bar">
+
+    </view>
+</view>

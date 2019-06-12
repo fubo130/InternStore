@@ -1,0 +1,6 @@
+.home_bg {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(134, 134, 134);
+    background-size: 100%;
+}
