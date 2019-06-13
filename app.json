@@ -1,10 +1,12 @@
 {
     "pages": [
+        "pages/Login/Login",
         "pages/HomePage/HomePage",
         "pages/logs/logs",
         "pages/Department/Department",
         "pages/User/User",
         "pages/Cart/Cart"
+        
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -1,18 +1,22 @@
 // pages/User/User.js
+import {hexMD5} from "../../utils/encrypt/md5.js";
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        authorized: false,
+        userID: '',
+        userNickname: ''
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        
     },
 
     /**
@@ -62,7 +66,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-
-    
+    }
 })

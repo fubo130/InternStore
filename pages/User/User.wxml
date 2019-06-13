@@ -1,4 +1,3 @@
 <view class="user_bg">
-    <button bindtap="Registar" style="margin-top:40rpx">注册</button>
-    <button bindtap="Login" style="margin-top:40rpx">登录</button>
+    
 </view>
