@@ -15,16 +15,13 @@ Page({
             success: function (res) {
                 if (res.authSetting['scope.userInfo']) {
                     wx.getUserInfo({
-
                         success: function (res) {
-
                             //传入用户信息
                             app.globalData.userInfo = res.userInfo
                             wx.login({
                                 //获取code
                                 success: function (res) {
                                     code = res.code //返回code
-
                                     wx.request({
                                         url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx4d3ef35070a63ac6&secret=0a1c576a369b58876754b465f792f43a&js_code=' + code + '&grant_type=authorization_code',
                                         data: {},
@@ -57,7 +54,6 @@ Page({
     },
 
     bindGetUserInfo: function (e) {
-
         if (e.detail.userInfo) {
             //用户按了允许授权按钮
             var that = this;
@@ -66,6 +62,12 @@ Page({
                 //获取code
                 success: function (res) {
                     code = res.code //返回code
+                    wx.request({
+                        url: 'http://hb9.api.yesapi.cn/?s=App.User.Login&username=def&password=202cb962ac59075b964b07152d234b70&&app_key=74928B74E87AC199A83A17EEDB749F0A',
+                        success:function(res) {
+                            console.log(res)
+                        }
+                    }),
 
                     wx.request({
                         url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx4d3ef35070a63ac6&secret=0a1c576a369b58876754b465f792f43a&js_code=' + code + '&grant_type=authorization_code',
@@ -74,9 +76,7 @@ Page({
                         },
                         success: function (res) {
                             openid = res.data.openid //返回openid
-
                             app.globalData.openid = openid
-
                             that.setData({
                                 openid: openid,
                             });
@@ -93,11 +93,13 @@ Page({
                                 url: "https://hb9.api.yesapi.cn/?s=App.Table.CheckCreate&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&check_field=BindOpenID&data=" + '{"NickName": "' + e.detail.userInfo.nickName + '","BindOpenID":"' + that.data.openid + '"}',
 
                                 success: function (res) {
-                                    console.log(res)
+                                    console.log(res);
+                                    
+                                    var locStg = JSON.stringify({ "NickName": e.detail.userInfo.nickName,"BindOpenID": that.data.openid });
+                                    wx.setStorageSync("userInfo", locStg);
                                     if (res.data.err_code == 0) {
                                         console.log("该用户已成功注册!")
-                                        var locStg = { "NickName": e.detail.userInfo.nickName, "BindOpenID": that.data.openid};
-                                        wx.setStorageSync("userInfo", Json.stringify(locStg));
+                                        
                                     } else if (res.data.error_code == 3) {
                                         console.log("该用户已存在!")
                                     }

@@ -9,13 +9,43 @@ Page({
     data: {
         authorized: false,
         userID: '',
-        userNickname: ''
+        userNickname: '',
+        userEmail: '',
+        userPhone: '',
+        userAddress: '',
+        userExp: 0
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let that= this;
+        let uInfo = wx.getStorageSync("userInfo");
+        let data = JSON.parse(uInfo);
+        console.log(data);
+        if (data.BindOpenID != '' && data.BindOpenID !=undefined) {
+            this.setData({
+                userID: data.BindOpenID,
+                userNickname: data.NickName,
+            })
+            
+            wx.request({
+                url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + this.data.userID + '"]]&fields=MemberExp',
+                success: function (res) {
+                    console.log(res.data.data.data.MemberExp)
+                    if (res.data.data.data.MemberExp != undefined) {
+                        
+                        that.setData({
+                            userExp: res.data.data.data.MemberExp
+                        })
+                    }
+                },
+                fail: function (err) {
+                    console.log('error', err);
+                }
+            })
+        }
         
     },
 

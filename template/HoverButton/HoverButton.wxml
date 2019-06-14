@@ -1,0 +1,5 @@
+<template name='HoverButton' >
+    <view class = 'bt'>
+        <icon type="success" class="post" bindtap="onPostClick"/>
+    </view>
+</template>

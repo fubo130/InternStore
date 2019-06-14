@@ -1,0 +1,7 @@
+.post {
+    width: auto;
+    height: auto;
+    z-index: 999;
+    position: fixed;
+    line-height: 100%;
+}

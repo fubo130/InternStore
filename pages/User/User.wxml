@@ -1,3 +1,36 @@
-<view class="user_bg">
-    
+<view class="user_bg" disable-scroll="true">
+    <view class="background_view">
+        <view class='wave'></view>
+        <view class='wave_1'></view>
+        <view class='wave_2'></view>
+        <view class='header'>
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="func_area">
+            <view class="row" style="margin-top:20rpx">
+                <text class="card-header">会员中心</text>
+                <text class="card-font">ID: {{userNickname}}</text>
+                <text class="card-font">积分: {{userExp}}</text>
+                <view class="card-btn" style='height: 7rpx width: 7rpx'>
+                    <image src='../../images/order.png'  style='height: 100%' mode="aspectFit"/>
+                </view>
+                <text>我的订单</text>
+                <view class="card-btn" style='height: 7rpx width: 7rpx'>
+                    <image src='../../images/ft.png'  style='height: 100%' mode="aspectFit"/>
+                </view>
+                <text>我的足迹</text>
+                <view class="card-btn" style='height: 7rpx width: 7rpx'>
+                    <image src='../../images/appointment.png'  style='height: 100%' mode="aspectFit"/>
+                </view>
+                <text>我的预约</text>
+                <view class="card-btn" style='height: 7rpx width: 7rpx'>
+                    <image src='../../images/coupon.png'  style='height: 100%' mode="aspectFit"/>
+                </view>
+                <text>我的优惠券</text>
+            </view>
+        </view>
+    </view>    
 </view>
+

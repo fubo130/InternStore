@@ -1,6 +1,13 @@
+<import src="../../template/HoverButton/HoverButton.wxml"/>
 
-<view class="home_bg">
-    <view class="search_bar">
 
-    </view>
+<view >
+    <swiper class="Swiper_container" horizontal="true" autoplay="true" circular="true" interval="2000" indicator-dots="true" indicator-color="rgba(255,255,255,0.40)" indicator-active-color="rgba(60, 107, 250, 0.87)">
+        <block wx:for="{{rollData}}" wx:key="">
+            <swiper-item>
+                <image src="{{imageData[item]}}" mode="aspectFit" style="height:100%">{{itemData}}</image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <template is="HoverButton"></template>
 </view>
