@@ -96,5 +96,40 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    //用户信息中心（添加修改地址。。。）
+    User_center: function() {
+        wx.navigateTo({
+            url: '../MyInfo/MyInfo',
+        })
+    },
+
+    //我的订单（管理查询订单）
+    My_order: function() {
+        wx.navigateTo({
+            url: '../MyOrder/MyOrder',
+        })
+    },
+
+    //我的足迹（浏览历史）
+    My_history: function() {
+        wx.navigateTo({
+            url: '../MyHistory/MyHistory',
+        })
+    },
+
+    //我的预约（或改成收藏）
+    My_appointment: function() {
+        wx.navigateTo({
+            url: '../MyAppointment/MyAppointment',
+        })
+    },
+
+    //我都优惠券（查看可使用优惠券）
+    My_coupon: function() {
+        wx.navigateTo({
+            url: '../MyCoupon/MyCoupon',
+        })
     }
 })

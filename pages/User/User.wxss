@@ -167,8 +167,34 @@
     0 3rpx hsl(0,0%,75%),
     0 4rpx hsl(0,0%,70%),
     0 5rpx hsl(0,0%,65%);
-    
 }
 
+.card-btn {
+    display: flex;
+    margin-top: 30rpx;
+    width: 80%;
+    align-self: left;
+}
 
+.btn-description {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-image {
+    height: auto;
+    width: 32px;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50rpx;
+    margin-left: 0rpx;
+}
+
+.logo {
+    margin-bottom: 20rpx;
+    margin-right: 20rpx;
+}
 

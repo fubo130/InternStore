@@ -5,7 +5,12 @@
         "pages/logs/logs",
         "pages/Department/Department",
         "pages/User/User",
-        "pages/Cart/Cart"
+        "pages/Cart/Cart",
+        "pages/MyInfo/MyInfo",
+        "pages/MyOrder/MyOrder",
+        "pages/MyHistory/MyHistory",
+        "pages/MyAppointment/MyAppointment",
+        "pages/MyCoupon/MyCoupon"
         
     ],
     "window": {

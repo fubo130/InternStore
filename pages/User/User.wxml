@@ -7,30 +7,36 @@
             <open-data type="userAvatarUrl"></open-data>
         </view>
     </view>
+
     <view class="bottom">
         <view class="func_area">
             <view class="row" style="margin-top:20rpx">
                 <text class="card-header">会员中心</text>
                 <text class="card-font">ID: {{userNickname}}</text>
                 <text class="card-font">积分: {{userExp}}</text>
-                <view class="card-btn" style='height: 7rpx width: 7rpx'>
-                    <image src='../../images/order.png'  style='height: 100%' mode="aspectFit"/>
+
+                <view class="btn-row" bindtap="User_center">
+                    <image class="btn-image" src='../../images/user_detail.png' mode="aspectFit"/>
+                    <text class="btn-description">个人信息</text>
                 </view>
-                <text>我的订单</text>
-                <view class="card-btn" style='height: 7rpx width: 7rpx'>
-                    <image src='../../images/ft.png'  style='height: 100%' mode="aspectFit"/>
+                <view class="btn-row" bindtap="My_order">
+                    <image class="btn-image" src='../../images/order.png' mode="aspectFit"/>
+                    <text class="btn-description">我的订单</text>
                 </view>
-                <text>我的足迹</text>
-                <view class="card-btn" style='height: 7rpx width: 7rpx'>
-                    <image src='../../images/appointment.png'  style='height: 100%' mode="aspectFit"/>
+                <view class="btn-row" bindtap="My_history">
+                    <image class="btn-image" src='../../images/ft.png'  style='height: 100%' mode="aspectFit"/>
+                    <text class="btn-description">我的足迹</text>
                 </view>
-                <text>我的预约</text>
-                <view class="card-btn" style='height: 7rpx width: 7rpx'>
-                    <image src='../../images/coupon.png'  style='height: 100%' mode="aspectFit"/>
+                <view class="btn-row" bindtap="My_appointment">
+                    <image class="btn-image" src='../../images/appointment.png'  style='height: 100%' mode="aspectFit"/>
+                    <text class="btn-description">我的预约</text>
                 </view>
-                <text>我的优惠券</text>
-            </view>
+                <view class="btn-row" bindtap="My_coupon">
+                    <image class="btn-image" src='../../images/coupon.png'  style='height: 100%' mode="aspectFit"/>
+                    <text class="btn-description">我的优惠券</text>
+                </view>     
+            </view>   
         </view>
-    </view>    
+    </view> 
 </view>
 
