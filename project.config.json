@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,14 @@
 					"id": -1,
 					"name": "用户页",
 					"pathName": "pages/User/User",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "用户信息页",
+					"pathName": "pages/MyInfo/MyInfo",
+					"query": "userID=olp3j5LlWbqWlJ1ZICCxXd5wu5wQ",
 					"scene": null
 				}
 			]

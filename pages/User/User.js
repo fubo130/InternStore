@@ -101,7 +101,7 @@ Page({
     //用户信息中心（添加修改地址。。。）
     User_center: function() {
         wx.navigateTo({
-            url: '../MyInfo/MyInfo',
+            url: '../MyInfo/MyInfo?userID='+this.data.userID,
         })
     },
 
@@ -131,5 +131,7 @@ Page({
         wx.navigateTo({
             url: '../MyCoupon/MyCoupon',
         })
-    }
+    },
+
+    
 })

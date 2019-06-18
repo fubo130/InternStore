@@ -7,7 +7,8 @@ Page({
     data: {
         isAuthorized: false,
         item: {},
-        imageData: ["../../images/act_0.png", "../../images/act_1.png", "../../images/act_3.png"],
+        imgData: ["https://github.com/fubo130/InternStore/blob/master/images/act_0.png?raw=true", "https://github.com/fubo130/InternStore/blob/master/images/act_1.png?raw=true",
+            "http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618100208_142c6ca21df547bfebb69c0cd4a4b242.png"],
         rollData: 3
     },
 
@@ -19,6 +20,8 @@ Page({
         }
         var db_length;
         var that = this;
+
+        //获取首页滚动图片信息
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.Query&model_name=Recommendation_items&app_key=74928B74E87AC199A83A17EEDB749F0A&select=*&return_sql=true',
             success: function (res) {
@@ -35,42 +38,16 @@ Page({
                     };
                     console.log(obj);
                     
-                    its.push(obj);
-                    
+                    its.push(obj);   
                 }
                 console.log(its)
                 that.item = its;
-                console.log(that.item)
-                /*
-                that.setData({
-                    item: its
-                })*/
+                console.log(that.item);
+                //that.setData({
+                //   imgData: its
+                //})
+                //console.log(imgData);
             }
         })
-        /*
-        wx.request({
-            url: 'https://hb9.api.yesapi.cn/?s=App.Table.Count&model_name=Recommendation_items&app_key=74928B74E87AC199A83A17EEDB749F0A',
-            success: function (res) {
-                console.log(res);
-                let db_length = res.data.data.total;
-                console.log(db_length)
-            }
-        })
-        let i = 1;
-        while (i < db_length) {
-            wx.request({
-                url: 'https://hb9.api.yesapi.cn/?s=App.Table.Get&model_name=Recommendation_items&app_key=74928B74E87AC199A83A17EEDB749F0A&id='+i,
-                success: function (res) {
-                    console.log(res);
-                    itemData.push(res.data.data.ItemName);
-                }
-            })
-            i = i+1;
-        }
-
-        this.setData({
-            item: {"itemData": itemData, "imageData": imageData}
-        })      */
     }
-
 })

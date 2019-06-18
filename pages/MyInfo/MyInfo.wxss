@@ -1,0 +1,188 @@
+.Info-bg {
+    background-image: url("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4098526861,1800178504&fm=26&gp=0.jpg");
+    background-size: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+}
+
+.FormTitle {
+    font-size: 60rpx;
+    text-align: center;
+    height: 100%;
+    margin-bottom: 80rpx;
+}
+
+.Section {
+    margin: 15rpx 20rpx;
+    border-radius: 20rpx;
+    height: 450rpx;
+    background-color: rgba(241, 16, 16, 0.87);
+    display: block;
+    background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561367158&di=85f6ec9f684e23657182a822399d798b&imgtype=jpg&er=1&src=http%3A%2F%2Fpic1a.nipic.com%2F2009-02-27%2F200922715316173_2.jpg");
+    background-size: 100%;
+    overflow: hidden;
+    border: solid 0.5rpx rgb(146, 91, 52);
+    box-shadow:  3px 5px 7px rgba(0, 0, 0, 0.815);
+}
+
+.SectionTitle {
+    font-size: 45rpx;
+    text-align: center;
+    margin-top: 30rpx;
+}
+
+.Quest {
+    font-size: 35rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.Quest-left {
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rpx;
+    margin-top: 25%;
+    margin-bottom: 3%;
+}
+
+.Quest-right {
+    width: 35%;
+    height: auto;
+    display: absolute;
+    flex-direction: column;
+    margin-right: 3%;
+    margin-left: 2%;
+    margin-top: 5%;
+    margin-bottom: 20%;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 10rpx;
+}
+
+.Quest-show {
+    font-size: 35rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.INPUT {
+    margin-left: 20rpx;
+    vertical-align: top;
+    font-size: 30rpx;
+}
+
+.btn {
+    margin-top: 60%;
+    margin-bottom: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(255, 196, 0, 0.685);
+}
+
+.drawer_screen { 
+ width: 100%; 
+ height: 100%; 
+ position: fixed; 
+ top: 0; 
+ left: 0; 
+ z-index: 1000; 
+ background: #000; 
+ opacity: 0.5; 
+ overflow: hidden; 
+} 
+  
+/*content*/
+.drawer_box { 
+ width: 650rpx; 
+ overflow: hidden; 
+ position: fixed; 
+ top: 50%; 
+ left: 0; 
+ z-index: 1001; 
+ background: #FAFAFA; 
+ margin: -150px 50rpx 0 50rpx; 
+ border-radius: 3px; 
+} 
+  
+.drawer_title{ 
+ padding:15px; 
+ font: 20px "microsoft yahei"; 
+ text-align: center; 
+} 
+.drawer_content { 
+ height: 210px; 
+ overflow-y: scroll; 
+} 
+  
+.btn_ok{ 
+ padding: 10px; 
+ font: 20px "microsoft yahei"; 
+ text-align: center; 
+ border-top: 1px solid #E8E8EA; 
+ color: #3CC51F; 
+ margin-bottom: 5rpx;
+} 
+
+.btn_cancel{ 
+ padding: 10px; 
+ font: 20px "microsoft yahei"; 
+ text-align: center; 
+ border-top: 1px solid #E8E8EA; 
+ color: rgb(197, 50, 31); 
+} 
+  
+.top{ 
+  padding-top:8px; 
+} 
+.bottom { 
+  padding-bottom:8px; 
+} 
+.title { 
+  margin-top: 40rpx;
+  height: 30px; 
+  line-height: 30px; 
+  width: 160rpx; 
+  text-align: center; 
+  display: inline-block; 
+  font: 300 28rpx/30px "microsoft yahei"; 
+} 
+  
+.input_base { 
+  border: 2rpx solid #ccc; 
+  padding-left: 10rpx; 
+  margin-right: 50rpx; 
+} 
+.input_h30{ 
+  margin-top: 40rpx;
+  height: 30px; 
+  line-height: 30px; 
+} 
+.input_h60{ 
+  height: 60px; 
+} 
+.input_view{ 
+  font: 12px "microsoft yahei"; 
+  background: #fff; 
+  color:#000; 
+  line-height: 30px; 
+} 
+  
+input { 
+  font: 12px "microsoft yahei"; 
+  background: #fff; 
+  color:#000 ; 
+} 
+radio{ 
+  margin-right: 20px; 
+} 
+.grid { display: -webkit-box; display: box; } 
+.col-0 {-webkit-box-flex:0;box-flex:0;} 
+.col-1 {-webkit-box-flex:1;box-flex:1;} 
+.fl { float: left;} 
+.fr { float: right;}

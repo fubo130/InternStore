@@ -1,0 +1,44 @@
+<view class="Info-bg">
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{onEdit}}"></view> 
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{onEdit}}">
+        <view class="drawer_title">会员信息</view> 
+        <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="drawer_content"> 
+            
+                <view class="top grid"> 
+                    <label class="title col-0">手机号码：</label> 
+                    <input class="input_base input_h30 col-1" name="Phone" placeholder="{{Phone}}" bindinput="bindPInput"></input> 
+                </view> 
+                <view class="top grid"> 
+                    <label class="title col-0">邮箱地址：</label> 
+                    <input class="input_base input_h30 col-1" name="Email" placeholder="{{Email}}" bindinput="bindEInput"></input> 
+                </view> 
+                <view class="top grid"> 
+                    <label class="title col-0">收件地址：</label> 
+                    <input class="input_base input_h30 col-1" name="Address" placeholder="{{Address}}" bindinput="bindAInput"></input> 
+                </view>     
+            </view> 
+            <button class="btn_ok" form-type="submit">更新</button> 
+            <view class="btn_cancel" bindtap="powerDrawer" data-statu="close">关闭</view> 
+        </form>
+    </view>
+    <view wx:if="{{onEdit==false}}">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <view class="FormTitle">会员信息</view>
+            <view class="Section">
+                <view class="SectionTitle">VIP 会员</view>
+                <view class="Quest">
+                    <view class="Quest-left">
+                        <view class="Quest-show">手机: {{Phone}}</view>
+                        <view class="Quest-show">邮箱: {{Email}}</view>
+                        <view class="Quest-show">住址: {{Address}}</view>
+                    </view>
+                    <view class="Quest-right">
+                        <open-data type="userAvatarUrl"></open-data>
+                    </view>
+                </view>
+            </view>
+            <button bindtap="powerDrawer" class="btn" data-statu="open">信息更新</button>
+        </form>
+    </view>
+</view>
