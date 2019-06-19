@@ -60,31 +60,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        if (this.data.time!=0) {
-            console.log("hello");
-            let uInfo = wx.getStorageSync("userInfo");
-            let data = JSON.parse(uInfo);
-            var that = this;
-            console.log(data.BindOpenID);
-            console.log("hello");
-            wx.request({
-                url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]',
-                success: function (res) {
-                    console.log(res);
-                    that.setData({
-                        Phone: res.data.data.data.Phone,
-                        Email: res.data.data.data.Email,
-                        Address: res.data.data.data.Address,
-                        tableID: res.data.data.data.id
-                    })
-                    console.log(that.data.Phone);
-                    console.log(that.data.Email);
-                    console.log(that.data.Address);
-                    console.log(that.data.tableID);
-                }
-            })
-        }
-       
+        
     },
 
     /**

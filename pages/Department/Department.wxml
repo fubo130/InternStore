@@ -1,2 +1,264 @@
-<!--pages/Department/Department.wxml-->
-<text>pages/Department/Department.wxml</text>
+<view class="dp-bg">
+    <view class="dps">
+        <view wx:if="{{lSelect==1}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL1">
+            <text class="dps-fontX">Lenovo电脑</text>
+        </view>
+        <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL1">
+            <text class="dps-font">Lenovo电脑</text>
+        </view>
+
+        <view wx:if="{{lSelect==2}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL2">
+            <text class="dps-fontX">ThinkPad电脑</text>
+        </view>
+        <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL2">
+            <text class="dps-font">ThinkPad电脑</text>
+        </view>
+
+        <view wx:if="{{lSelect==3}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL3">
+            <text class="dps-fontX">手机/通信</text>
+        </view>
+        <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL3">
+            <text class="dps-font">手机/通信</text>
+        </view>
+
+        <view wx:if="{{lSelect==4}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL4">
+            <text class="dps-fontX">智能产品</text>
+        </view>
+        <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL4">
+            <text class="dps-font">智能产品</text>
+        </view>
+
+        <view wx:if="{{lSelect==5}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL5">
+            <text class="dps-fontX">平板电脑</text>
+        </view>
+        <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL5">
+            <text class="dps-font">平板电脑</text>
+        </view>
+
+        <view wx:if="{{lSelect==6}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL6">
+            <text class="dps-fontX">配件/办公</text>
+        </view>
+        <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL6">
+            <text class="dps-font">配件/办公</text>
+        </view>
+
+        <view wx:if="{{lSelect==7}}" class="dps-itemX" style="margin-top: 20rpx" bindtap="clickL7">
+            <text class="dps-fontX">增值服务</text>
+        </view>
+        <!-- <view wx:else="{{}}" class="dps-item" style="margin-top: 20rpx" bindtap="clickL7">
+            <text class="dps-font">增值服务</text>
+        </view> -->
+    </view>
+
+
+    <scroll-view class="dtl" scroll-y="true">
+        <block wx:if="{{lSelect==1}}">
+            <text class="dtl-title">-游戏本-</text>
+            <view class="dtl-item" bindtap="clickR1">
+                    <image src="http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618135747_c690bbe01c600b37b10b8a45ab70c07c.jpeg" mode="aspectFit" class="item-image"><text class="dtl-nm">Y7000p</text></image>
+                </view>
+
+                <view class="dtl-item" bindtap="clickR2">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560864488836&di=09e77c4a31de4fffadcdc1d7632a6f26&imgtype=0&src=http%3A%2F%2Farticle-fd.zol-img.com.cn%2Fg5%2FM00%2F00%2F0F%2FChMkJltWbVyINPWEAAFW3LH8FYoAAp-ZAPcJ40AAVb0708.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">Y7000</text></image>
+                </view>
+
+                <view class="dtl-item" bindtap="clickR3">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561515335&di=73c7477f5711c9fa00fbd385bf51c1bb&imgtype=jpg&er=1&src=http%3A%2F%2Fp1.lefile.cn%2Fproduct%2Fadminweb%2F2019%2F04%2F26%2FGVgi9oPDHppt4zxDKZ5khvQsK-7485.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">Y9000k</text></image>
+                </view>
+
+                <text class="dtl-title">-轻薄本-</text>
+
+                <view class="dtl-item" bindtap="clickR4">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560864644516&di=9a52b7b50582f2b8ed47caad81a83cf1&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fproduct%2F1173%2F1173267%2F6_m2.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">小新青春版</text></image>
+                </view>
+
+                <view class="dtl-item" bindtap="clickR5">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560864686137&di=13db1e61763600662cc6c0fd28720a38&imgtype=0&src=http%3A%2F%2Fimg2.zol.com.cn%2Fproduct%2F190%2F547%2Fce4y8okNDQHOk.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">小新14</text></image>
+                </view>
+
+                <view class="dtl-item"  bindtap="clickR6">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560864747130&di=a323f2eaadbb22f8803ff2e3804eaed5&imgtype=0&src=http%3A%2F%2Fi8.hexun.com%2F2017-10-30%2F191431189.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">小新15</text></image>
+                </view>
+
+                <view class="dtl-item">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560864837409&di=386e6dea5a163b6c057591294a71de11&imgtype=0&src=http%3A%2F%2F2f.zol-img.com.cn%2Fproduct%2F198_800x600%2F959%2Fce27B5YfD6GI.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">Air14 19款</text></image>
+                </view>
+
+                <view class="dtl-item">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561470686&di=0134343bf210dfe8e1ea77d91f91c2fb&imgtype=jpg&er=1&src=http%3A%2F%2F2a.zol-img.com.cn%2Fproduct%2F186%2F726%2Fce2gf3lbfsFjM.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">小新潮7000</text></image>
+                </view> 
+
+                <text class="dtl-title">-便携本-</text>
+
+                <view class="dtl-item">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560875581255&di=bee0af2b8461b5eed288f0fb9f82f4c7&imgtype=0&src=http%3A%2F%2F2.zol-img.com.cn%2Fproduct%2F190_450x337%2F669%2FceZCT9rG1rLPs.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">小新潮Air</text></image>
+                </view>
+
+                <view class="dtl-item">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560875655384&di=ba3b08b06eb7dac54508c3bfcc8a0cff&imgtype=0&src=http%3A%2F%2F09imgmini.eastday.com%2Fmobile%2F20190109%2F20190109072512_cebd61b047a139cefa6dd65609c3d4e3_4.jpeg" mode="aspectFit" class="item-image"><text class="dtl-nm">YOGA S940</text></image>
+                </view>
+
+                <view class="dtl-item">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560875834811&di=77ed999fa57945d6b4608d22ff4a65f8&imgtype=0&src=http%3A%2F%2Fimage1.suning.cn%2Fuimg%2Fb2c%2Fnewcatentries%2F0000000000-000000000860745335_5_800x800.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">ideapad720s</text></image>
+                </view>
+        </block>
+        <block wx:if="{{lSelect==2}}">
+            <text class="dtl-title">-ThinkPad-</text>
+            <view class="dtl-item">
+                <image src="https://img12.360buyimg.com/n1/s450x450_jfs/t1/43754/15/1909/181733/5cc7fd1fE71cabc45/33a736896901fd65.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">S系列</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560876380376&di=c70219836df9e29cecc77b5def77ba62&imgtype=0&src=http%3A%2F%2Farticle-fd.zol-img.com.cn%2Fg5%2FM00%2F05%2F06%2FChMkJlrBfkqIae2fAAFy2C5iUF0AAnQQwEY2nUAAXLw970.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">E系列</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561471230&di=1558939e4c9d5d56a9807142babf6465&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.union.com.hk%2Fbusiness%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F2%2Fimage%2F9df78eab33525d08d6e5fb8d27136e95%2Fx%2F2%2Fx250_2.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">X系列</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p1.lefile.cn/product/adminweb/2019/03/26/NxKcNBw8kRAU6agXnQKAaSvJ1-5229.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">T系列</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561471266&di=f0747f76a5fb1ef8db187010ab0f00db&imgtype=jpg&er=1&src=http%3A%2F%2Fpimages3.tianjimedia.com%2Fresources%2Fproduct%2F20170511%2FIAA4ISC2N22W3778N0CLXYU2JTG6924U.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">P系列</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2019/05/31/Tx8lVAxt9145GyEiVIr6wVUgL-3651.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">R系列</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560876671649&di=448d160163451330fb10d08f77623017&imgtype=0&src=http%3A%2F%2Fi2.sinaimg.cn%2FIT%2Fcr%2F2012%2F0515%2F723001344.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">X1系列</text></image>
+            </view>
+
+            <text class="dtl-title">-ThinkCentre-</text>
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2017/08/30/OSqu15db8S1MovZxaHaUGrkfN-5073.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">高性能一体机</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p2.lefile.cn/product/adminweb/2019/05/31/c1sYI85AQy3j84GCg0ih1Efog-3883.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">分体台式机</text></image>
+            </view>
+        </block>
+
+        <block wx:if="{{lSelect==3}}">
+            <text class="dtl-title">-Lenovo-</text>
+            <view class="dtl-item">
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560877097149&di=00284351553ce56e26b1771288c96491&imgtype=0&src=http%3A%2F%2Fm.xianshuabao.com%2Fjs%2Fnet%2Fupload%2Fimage%2F20171231%2F6365032605118840027946028.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">K320t</text></image>
+            </view>
+
+            <text class="dtl-title">-专属配件-</text>
+            <view class="dtl-item">
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560877097149&di=00284351553ce56e26b1771288c96491&imgtype=0&src=http%3A%2F%2Fm.xianshuabao.com%2Fjs%2Fnet%2Fupload%2Fimage%2F20171231%2F6365032605118840027946028.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">K320t</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2018/06/13/runc8rGMqJDVO5Gjcrr18Drs9-7550.w520.png" mode="aspectFit" class="item-image"><text class="dtl-nm">Z5保护壳</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p2.lefile.cn/product/adminweb/2018/10/23/EquI3k9snOvgJUmDrRqiwLAxF-6542.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">Z5保护壳</text></image>
+            </view>
+
+        </block>
+
+        <block wx:if="{{lSelect==4}}">
+            <text class="dtl-title">-家居-</text>
+            <view class="dtl-item">
+                <image src="https://p1.lefile.cn/product/adminweb/2018/10/24/d10CxRnfW5pDnoOaOsmXoJn5U-6704.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">智能音箱</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p2.lefile.cn/product/adminweb/2018/10/24/t6hWguTOTp4a9Qhdpge4V2TrI-5272.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">智能插座</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2017/12/10/IZUj8V4ZyKkUvPwJwd3uPGeaq-8737.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">AR设备</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p1.lefile.cn/product/adminweb/2019/01/08/OSTsL7LR7KC1njnecEydQj47w-5827.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">AR设备</text></image>
+            </view>
+
+            <text class="dtl-title">-健康-</text>
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2018/09/13/RGaYO88ycMNennoALHu2r6Ce3-8976.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">空气净化器</text></image>
+            </view>         
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2019/04/24/12jvkD4jBTilfReMHQ1JTrt0A-6234.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">体脂称</text></image>
+            </view>    
+
+            <text class="dtl-title">-穿戴-</text>
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2018/10/17/rkkpaPGnUjx29xuurrG5YxBKr-7209.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">Watch S </text></image>
+            </view>        
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2018/10/23/s7wsFKopMvf7IjmUxnwx6IYHd-6183.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">WatchX Plus </text></image>
+            </view> 
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2018/10/29/tvWcXdfuzSkRpIcagbPTD5A1N-4266.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">智能手环</text></image>
+            </view>     
+
+            <text class="dtl-title">-办公-</text>
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2018/06/04/N98mQ7czglSiQK8GaHxIKyNMk-9817.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">智能储存</text></image>
+            </view>
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2018/11/06/wXmNGk5qbUyf3lMbBxgpCgVse-9997.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">富氧水杯</text></image>
+            </view>
+        </block>
+
+        <block wx:if="{{lSelect==5}}">
+            <text class="dtl-title">-小新平板-</text>
+            <view class="dtl-item">
+                <image src="https://p1.lefile.cn/product/adminweb/2019/05/28/DlO7mgIxLUgd5exQaWxpwXRiq-4193.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">小新平板</text></image>
+            </view>
+
+            <text class="dtl-title">-常规平板-</text>
+            <view class="dtl-item">
+                <image src="https://p1.lefile.cn/product/adminweb/2019/01/16/Fiu1lqttSh6UrUmO7vprVWigR-1706.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">TAB4</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2019/06/04/pkyRG4lvOZ83GmNu1MRvasX1B-2950.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">TAB4 Plus</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2017/08/18/NrNMYlxdTmjRHoQleXwJWJp2Z-9116.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">P8</text></image>
+            </view>
+        </block>
+
+        <block wx:if="{{lSelect==6}}">
+            <text class="dtl-title">-储存设备-</text>
+            <view class="dtl-item">
+                <image src="https://p2.lefile.cn/product/adminweb/2019/02/12/2C3ybne75XzrrVqDmkEnBv0sb-4396.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">U盘</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2018/06/15/V06Uc8KQcmuCp8PldOZtr3KzQ-2188.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">移动硬盘</text></image>
+            </view>
+
+            <text class="dtl-title">-电脑配件-</text>
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2018/09/03/oaZDU0aR9bfv8EgXCuPrZVr7r-1134.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">鼠标</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p4.lefile.cn/product/adminweb/2018/08/13/evB2zBtAs4Qiwm9Gsl3ZZXcVw-5799.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">键盘</text></image>
+            </view>
+
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2018/12/18/tw6gv8Q0BE86ChPP0Km62T1bl-9108.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">电脑包</text></image>
+            </view>
+
+            <text class="dtl-title">-打印机-</text>
+            <view class="dtl-item">
+                <image src="https://p3.lefile.cn/product/adminweb/2016/07/18/O6fh87jUQ99L8peMMWtF2eM8L-6852.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">单功能打印机</text></image>
+            </view>
+            <view class="dtl-item">
+                <image src="https://p2.lefile.cn/product/adminweb/2017/05/23/rDroc1eQs6K9D6V0Bay9mkfL4-5319.w520.jpg" mode="aspectFit" class="item-image"><text class="dtl-nm">3D打印机</text></image>
+            </view>
+        </block>
+    </scroll-view>
+</view>

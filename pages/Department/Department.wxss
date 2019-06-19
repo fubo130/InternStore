@@ -1,1 +1,106 @@
-/* pages/Department/Department.wxss */
+.dp-bg {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+}
+
+.dps {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8rpx 15rpx grey;
+    border-top: 1rpx solid gray;
+}
+
+.dps .dps-item {
+    height: 10%;
+    width: 95%;
+    margin-right: 0;
+    margin-left: 5%;
+    margin-top: 10rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dps .dps-itemX {
+     height: 10%;
+     width: 95%;
+     margin-right: 0;
+     margin-left: 5%;
+     margin-top: 10rpx;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     box-shadow: -5rpx 0rpx 0rpx rgb(255, 158, 14);
+}
+
+.dps-font {
+    font-size: 26rpx;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dps-fontX {
+    font-size: 26rpx;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: rgb(255, 158, 14);
+}
+
+
+.dtl {
+    width: 75%;
+    height: 100%;
+    /* border-top: 1rpx solid gray; */
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+}
+
+.dtl .dtl-title {
+    width: 100%;
+    margin-left: 35%;
+    margin-right: 35%;
+    display: inline-block;
+    margin-top: 50rpx;
+    font-family: PingFangSC-Regular;
+}
+
+.dtl .dtl-item {
+    /* flex: 0 0 33.3333333333333%; */
+    width: 31%;
+    height: 240rpx;
+    margin-left: 10rpx;
+    overflow: hidden;
+    /* border: solid 0.5rpx rgb(211, 10, 10); */
+    margin-top: 50rpx;
+    display: inline-block;
+}
+
+.dtl-item .item-image {
+    width: 100%;
+    height: 100px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dtl-item .dtl-nm {
+    width: auto;
+    height: 15px;
+    margin-bottom: 0;
+    font-size: 30rpx;
+    line-height: -50px;
+}

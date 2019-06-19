@@ -18,7 +18,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.1",
@@ -48,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -68,6 +69,13 @@
 					"id": 2,
 					"name": "用户信息页",
 					"pathName": "pages/MyInfo/MyInfo",
+					"query": "userID=olp3j5LlWbqWlJ1ZICCxXd5wu5wQ",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/Department/Department",
 					"query": "userID=olp3j5LlWbqWlJ1ZICCxXd5wu5wQ",
 					"scene": null
 				}

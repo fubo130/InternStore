@@ -7,12 +7,15 @@ Page({
     data: {
         isAuthorized: false,
         item: {},
-        imgData: ["https://github.com/fubo130/InternStore/blob/master/images/act_0.png?raw=true", "https://github.com/fubo130/InternStore/blob/master/images/act_1.png?raw=true",
-            "http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618100208_142c6ca21df547bfebb69c0cd4a4b242.png"],
+        imgData: ["http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618140152_007decec5e9fb12c8de48377a2ac5841.png", "http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618140211_e3b75a39b4fd4bd3daeb503497121a51.png",
+"http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618100208_142c6ca21df547bfebb69c0cd4a4b242.png"],
         rollData: 3
     },
 
     onLoad(data) {
+        wx.showLoading({
+            title: '请稍后......',
+        })
         if (data.isAuthorized != null && data.isAuthorized != undefined) {
             this.setData({
                 isAuthorized: data.isAuthorized
@@ -47,6 +50,9 @@ Page({
                 //   imgData: its
                 //})
                 //console.log(imgData);
+            },
+            complete() {
+                wx.hideLoading();
             }
         })
     }
