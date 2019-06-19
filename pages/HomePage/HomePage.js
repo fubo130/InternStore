@@ -7,8 +7,8 @@ Page({
     data: {
         isAuthorized: false,
         item: {},
-        imgData: ["http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618140152_007decec5e9fb12c8de48377a2ac5841.png", "http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618140211_e3b75a39b4fd4bd3daeb503497121a51.png",
-"http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190618100208_142c6ca21df547bfebb69c0cd4a4b242.png"],
+        imgData: ["https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561515335&di=73c7477f5711c9fa00fbd385bf51c1bb&imgtype=jpg&er=1&src=http%3A%2F%2Fp1.lefile.cn%2Fproduct%2Fadminweb%2F2019%2F04%2F26%2FGVgi9oPDHppt4zxDKZ5khvQsK-7485.jpg", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560876671649&di=448d160163451330fb10d08f77623017&imgtype=0&src=http%3A%2F%2Fi2.sinaimg.cn%2FIT%2Fcr%2F2012%2F0515%2F723001344.jpg",
+"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560877097149&di=00284351553ce56e26b1771288c96491&imgtype=0&src=http%3A%2F%2Fm.xianshuabao.com%2Fjs%2Fnet%2Fupload%2Fimage%2F20171231%2F6365032605118840027946028.jpg"],
         rollData: 3
     },
 

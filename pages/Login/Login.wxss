@@ -5,10 +5,10 @@
   display: block;  
   width: 160rpx;  
   height: 160rpx;  
-  border-radius: 5px;  
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
-  margin-top: 150px;
-  margin-bottom: 20px;
+  border-radius: 10rpx;  
+  box-shadow: 6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);  
+  margin-top: 30rpx;
+  margin-bottom: 400px;
 }
  
 .content {

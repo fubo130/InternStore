@@ -25,7 +25,7 @@
     background-size: 100%;
     overflow: hidden;
     border: solid 0.5rpx rgb(146, 91, 52);
-    box-shadow:  3px 5px 7px rgba(0, 0, 0, 0.815);
+    box-shadow:  6rpx 10rpx 14rpx rgba(0, 0, 0, 0.815);
 }
 
 .SectionTitle {
@@ -106,23 +106,23 @@
  left: 0; 
  z-index: 1001; 
  background: #FAFAFA; 
- margin: -150px 50rpx 0 50rpx; 
+ margin: -300rpx 50rpx 0 50rpx; 
  border-radius: 3px; 
 } 
   
 .drawer_title{ 
- padding:15px; 
- font: 20px "microsoft yahei"; 
+ padding:30rpx; 
+ font: 40rpx "microsoft yahei"; 
  text-align: center; 
 } 
 .drawer_content { 
- height: 210px; 
+ height: 420rpx; 
  overflow-y: scroll; 
 } 
   
 .btn_ok{ 
- padding: 10px; 
- font: 20px "microsoft yahei"; 
+ padding: 20rpx; 
+ font: 40rpx "microsoft yahei"; 
  text-align: center; 
  border-top: 1px solid #E8E8EA; 
  color: #3CC51F; 
@@ -130,27 +130,27 @@
 } 
 
 .btn_cancel{ 
- padding: 10px; 
- font: 20px "microsoft yahei"; 
+ padding: 20rpx; 
+ font: 40rpx "microsoft yahei"; 
  text-align: center; 
- border-top: 1px solid #E8E8EA; 
+ border-top: 2rpx solid #E8E8EA; 
  color: rgb(197, 50, 31); 
 } 
   
 .top{ 
-  padding-top:8px; 
+  padding-top:16rpx; 
 } 
 .bottom { 
-  padding-bottom:8px; 
+  padding-bottom:16rpx; 
 } 
 .title { 
   margin-top: 40rpx;
-  height: 30px; 
-  line-height: 30px; 
+  height: 60rpx; 
+  line-height: 60rpx; 
   width: 160rpx; 
   text-align: center; 
   display: inline-block; 
-  font: 300 28rpx/30px "microsoft yahei"; 
+  font: 300 28rpx/60rpx "microsoft yahei"; 
 } 
   
 .input_base { 
@@ -160,26 +160,26 @@
 } 
 .input_h30{ 
   margin-top: 40rpx;
-  height: 30px; 
-  line-height: 30px; 
+  height: 60rpx; 
+  line-height: 60rpx; 
 } 
 .input_h60{ 
-  height: 60px; 
+  height: 120rpx; 
 } 
 .input_view{ 
-  font: 12px "microsoft yahei"; 
+  font: 24rpx "microsoft yahei"; 
   background: #fff; 
   color:#000; 
-  line-height: 30px; 
+  line-height: 60rpx; 
 } 
   
 input { 
-  font: 12px "microsoft yahei"; 
+  font: 24rpx "microsoft yahei"; 
   background: #fff; 
   color:#000 ; 
 } 
 radio{ 
-  margin-right: 20px; 
+  margin-right: 40rpx; 
 } 
 .grid { display: -webkit-box; display: box; } 
 .col-0 {-webkit-box-flex:0;box-flex:0;} 
