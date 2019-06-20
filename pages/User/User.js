@@ -20,6 +20,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        
+        wx.showLoading({
+            title: '请等待.......',
+            mask: true,
+        })
+
+
         let that= this;
         let uInfo = wx.getStorageSync("userInfo");
         let data = JSON.parse(uInfo);
@@ -43,6 +50,9 @@ Page({
                 },
                 fail: function (err) {
                     console.log('error', err);
+                },
+                complete:function(){
+                    wx.hideLoading();
                 }
             })
         }

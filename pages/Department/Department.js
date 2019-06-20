@@ -14,6 +14,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+
+        wx.showLoading({
+            title: '请等待......',
+        })
+
         let that = this;
         this.setData({
             lSelect: 1

@@ -1,3 +1,53 @@
-<view>
+<scroll-view class = "bkg" scroll-y="true">
+    <swiper class="Swiper_container" horizontal="true" autoplay="true" circular="true" interval="2000" indicator-dots="true" indicator-color="rgba(161, 156, 156, 0.7);" indicator-active-color="rgba(60, 107, 250, 0.87)" previous-margin='20rpx' next-margin='20rpx'>
+        <block wx:for="{{ImgNum}}" wx:key="">
+            <swiper-item style="display=block">
+                <image src="{{DetailImg[item]}}" style="height:100% " mode="aspectFit">{{itemData}}</image>
+            </swiper-item>
+        </block>
+    </swiper>
 
-</view>
+    <view class="adv-area">
+        <image src="../../images/123.jpg" mode="widthFix"  style="width: 100%" bindtap=""/>
+    </view>
+
+    <view class = "desc-area">
+        <view class = "desc-title">{{ShowDesc}}</view>
+        <view class = "desc-detail">{{DescDetail}}</view>
+    </view>
+
+    <view class = "price-area">
+        <view class = "price">¥{{ShowPrice}}</view>
+    </view>
+
+
+    <view class = "coupon-area">
+        <view class="coupon-img">
+            <image src="../../images/dtcoupon.png" mode="widthFix" style="width: 100%"/>
+        </view>
+        <view class = "coupon-detail">
+            没有可用的优惠券呢，去领券中心瞧瞧吧！
+        </view>
+    </view>
+
+
+    <view class = "btn-area">
+        <view class="btn1">
+            <view class="btn-1">
+                <image src="../../images/cs.png" mode="widthFix" style="width: 100%"></image>
+                客服
+            </view>
+
+            <view class="btn-2">
+                <image src="{{like_btn}}" mode="widthFix" style="width: 100%" bindtap="switchLike"></image>
+                收藏
+            </view>
+        </view>
+        <view class="btn3">
+            <text class="btn-text">加入购物车</text>
+        </view>
+        <view class="btn2">
+            <text class="btn-text">立即购买</text>
+        </view>
+    </view>
+</scroll-view>
