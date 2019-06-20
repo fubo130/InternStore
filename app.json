@@ -10,8 +10,8 @@
         "pages/MyOrder/MyOrder",
         "pages/MyHistory/MyHistory",
         "pages/MyAppointment/MyAppointment",
-        "pages/MyCoupon/MyCoupon"
-        
+        "pages/MyCoupon/MyCoupon",
+        "pages/ItemDetail/ItemDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
