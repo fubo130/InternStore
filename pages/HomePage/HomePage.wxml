@@ -1,7 +1,11 @@
 <import src="../../template/HoverButton/HoverButton.wxml"/>
-<view >
+<scroll-view scroll-y="true" style="height: 100% width: 100%">
     <view class="SearchBar">
-        <view class=""></view>
+        
+        <input class="search" name="Phone" placeholder="{{Phone}}" bindinput="bindPInput"></input>
+        <view class="search-btn" bindtap="search">
+            <image src="../../images/search.png" mode="widthFix" style="width: 100%"/>
+        </view>
     </view>
     
     <swiper class="Swiper_container" horizontal="true" autoplay="true" circular="true" interval="2000" indicator-dots="true" indicator-color="rgba(161, 156, 156, 0.7)" indicator-active-color="rgba(60, 107, 250, 0.87)" previous-margin='20rpx' next-margin='20rpx'>
@@ -11,5 +15,58 @@
             </swiper-item>
         </block>
     </swiper>
+
+    <view class="spt">
+        <view class="spt-item">
+            <image src="../../images/support.png" mode="aspectFit" class="spt-img"/>
+            <text class="spt-text">官方正品</text>
+        </view>
+        <view class="spt-item">
+            <image src="../../images/support.png" mode="aspectFit" class="spt-img"/>
+            <text class="spt-text">价格优惠</text>
+        </view>
+        <view class="spt-item">
+            <image src="../../images/support.png" mode="aspectFit" class="spt-img"/>
+            <text class="spt-text">七天退换</text>
+        </view>
+        <view class="spt-item">
+            <image src="../../images/support.png" mode="aspectFit" class="spt-img"/>
+            <text class="spt-text">售后安心</text>
+        </view>
+    </view>
+
+    <view class="act">
+        <view class="act-item">
+            <view class="act-itemImg">
+                <image src="../../images/discount.png" mode="widthFix" style="width: 100%"></image>
+            </view>
+            <view class="act-itemTitle">
+                砍价
+            </view>
+        </view>
+        <view class="act-item">
+            <view class="act-itemImg">
+                <image src="../../images/store.png" mode="widthFix" style="width: 100%"></image>
+            </view>
+            <view class="act-itemTitle">
+                门店
+            </view>
+        </view>
+        <view class="act-item">
+            <view class="act-itemImg">
+                <image src="../../images/dis.png" mode="widthFix" style="width: 100%"></image>
+            </view>
+            <view class="act-itemTitle">
+                领券
+            </view>
+        </view>
+    </view>
+    <view class ="all-item">
+        <block wx:for="{{list}}"  wx:key="id">
+            <view  class="dtl-item" bindtap="clickR1" id="{{item.id}}">
+                <image src="{{item.Item_Img}}" mode="aspectFit" class="item-image"><text class="dtl-nm">{{item.Item_Name}}</text></image>
+            </view>
+        </block>
+    </view>
     
-</view>
+</scroll-view>
