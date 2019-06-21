@@ -12,7 +12,8 @@ Page({
         ShowPrice: "",
         ShowDesc: "",
         DescDetail: "",
-        like_btn: "../../images/like1.png" 
+        like_btn: "../../images/like1.png",
+        DesSelect: 1
     },
 
     onLoad: function (options) {
@@ -72,6 +73,11 @@ Page({
         var that = this;
         //收藏
         if (that.data.like_btn == "../../images/like1.png") {
+            wx.showToast({
+                title: '您已成功收藏',
+                duration: 1500,
+                image: '../../images/like.png'
+            })
             /*
             wx.showLoading({
                 title: '请稍后......',
@@ -114,7 +120,13 @@ Page({
         }
 
         //取消
-        else {/*
+        else {
+            wx.showToast({
+                title: '您已取消收藏',
+                duration: 1500,
+                image: '../../images/disLike.png'
+            })
+            /*
             wx.showLoading({
                 title: '请稍后......',
             })
@@ -153,6 +165,29 @@ Page({
                 like_btn: "../../images/like1.png"
             })
         }
+    },
+
+    desSelt1: function () {
+        this.setData({
+            DesSelect: 1
+        })
+    },
+
+    desSelt2: function() {
+        this.setData({
+            DesSelect: 2
+        })
+    },
+    previewImg: function(e) {
+        var index = e.currentTarget.dataset.id;
+        console.log(e)
+        wx.previewImage({
+            current: this.data.DetailImg[index],     //当前图片地址
+            urls: this.data.DetailImg,               //所有要预览的图片的地址集合 数组形式
+            success: function (e) { },
+            fail: function (e) { },
+            complete: function (e) { },
+        })
     }
 
 })

@@ -2,7 +2,7 @@
     <swiper class="Swiper_container" horizontal="true" autoplay="true" circular="true" interval="2000" indicator-dots="true" indicator-color="rgba(161, 156, 156, 0.7);" indicator-active-color="rgba(60, 107, 250, 0.87)" previous-margin='20rpx' next-margin='20rpx'>
         <block wx:for="{{ImgNum}}" wx:key="">
             <swiper-item style="display=block">
-                <image src="{{DetailImg[item]}}" style="height:100% " mode="aspectFit">{{itemData}}</image>
+                <image src="{{DetailImg[item]}}" style="height:100% " mode="aspectFit" class="sp" bindtap="previewImg" id="{{item}}">{{itemData}}</image>
             </swiper-item>
         </block>
     </swiper>
@@ -27,10 +27,94 @@
         </view>
         <view class = "coupon-detail">
             没有可用的优惠券呢，去领券中心瞧瞧吧！
+            <image src="../../images/arrow.png"  class="arrow"/>
         </view>
     </view>
 
+    
 
+    <view class = "description">
+        <view class="description-title">
+            <block wx:if="{{DesSelect==1}}">
+                <view class="descrip-selected1">
+                    商品详情
+                </view>
+                <view class="descrip-select2" bindtap="desSelt2">
+                    用户评价
+                </view>
+            </block>
+
+            <block wx:if="{{DesSelect==2}}">
+                <view class="descrip-select1" bindtap="desSelt1">
+                    商品详情
+                </view>
+                <view class="descrip-selected2">
+                    用户评价
+                </view>
+            </block>
+        </view>
+        <block wx:if="{{DesSelect==1}}">
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164141_955f031f6dc7bb6c43abda39b4a1e12a.jpeg"  mode="widthFix" class="imgs" />
+            <image src="		http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164149_34f64c3fe818f3250decaea4bf1a3051.jpeg"  mode="widthFix" class="imgs" />
+            <image src="		http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164156_27741939f4f1d6557b4d823d970d7c2b.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164239_35b63daed84fd60620290a614a992084.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164320_3d876c2c6d1f713dfc8da97809b0c4a8.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164331_892d9f854b34bfe70f6a397f825d44c0.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164343_6d28d2bf64cef900251744e48b716a5d.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164354_3bf3e20f33e1ff9b062f923d87fd9139.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164512_36a6beb1b1cb602001514648cdade09c.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164524_220579f4653261ad8a46dcc980f40ac4.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164551_fef0897b369434bda4ccf1ef3378f5b9.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164616_62f939c7e63bed6352fabe64ae7277fa.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164627_28eacdb4a5e6346f246daac41604dc20.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164637_c957ccf6ce262a1ca77d1d68f723032d.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="		http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164647_f4e0ee65231cbc81591304edc5037009.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164700_26725b65d9e24e4690a53b1857c6c0f4.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620164711_7c6d918759192bf9bb46179c8cdaacf2.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165023_a92080002d31dfd7178980bd10c8baa5.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165034_4e22fe74988240e71005faabea925355.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165302_7e3476ffc1c4d4fdffb9821339aa074e.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165553_446431fd05b3b224de0b215d5cf020e9.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165720_7ce3a4633555262e5003079a62314f1d.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="	http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165730_05e49583e3ca0bbf8eca0b474753a2c4.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="		http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165753_b79523dba4378e81cd83e276040894ab.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="		http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165841_83dfdb1bc2811908482f99e41b8b4e4f.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="			http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165851_4939b64e8cf9e87290f9fbcdf182b1b6.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="			http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165913_14273be7e6fdb09fc6b58d9f92e11310.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="				http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165922_fe00e7936f49d946d23ead348ff8a567.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="					http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165939_ed34861aa309152bdde6f0fed946e92a.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="					http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620165946_6047f9ac9d5594164278ae718f619cf6.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="						http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620170012_2ceb18d6fce8e58a672e60660996666c.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="						http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620170023_f521843849369122bc89dd7e1718b7da.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="						http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620170045_b7a0512c2485e093e5dfb15b2cfde150.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="							http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620170051_e001b5066ec51a3034ec192c24caeaf4.jpeg"  mode="widthFix" class="imgs"/>
+            <image src="								http://cdn7.okayapi.com/74928B74E87AC199A83A17EEDB749F0A_20190620170056_eb290a7f37d4c106b8f868a3bb7e692d.jpeg"  mode="widthFix" class="imgs"/>
+        </block>
+        <block wx:if="{{DesSelect==2}}">
+            <view style="height:1000rpx" class="comment-area">
+                <view class = "comment">
+                    <view class="userAvatar">
+                        <open-data type="userAvatarUrl"></open-data>
+                        付博 
+                        <!-- <image src="../../images/up.png" style=" width:30%" mode="widthFix" />
+                      
+                        <image src="../../images/down.png" style="width:30%" mode="widthFix" /> -->
+                       
+                    </view>
+                    <view class="comment-text" scroll-y="true">
+                        <text class="width: 100% height: 100%">618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的</text>
+                    </view>
+                    <view class="comment-pic">
+                        <view class="comment-img"></view>
+                        <view class="comment-img"></view>
+                        <view class="comment-img"></view>
+                        <view class="comment-img"></view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view style="height: 120rpx"/>
     <view class = "btn-area">
         <view class="btn1">
             <view class="btn-1">

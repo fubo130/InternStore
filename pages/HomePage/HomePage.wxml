@@ -7,7 +7,7 @@
     <swiper class="Swiper_container" horizontal="true" autoplay="true" circular="true" interval="2000" indicator-dots="true" indicator-color="rgba(161, 156, 156, 0.7)" indicator-active-color="rgba(60, 107, 250, 0.87)" previous-margin='20rpx' next-margin='20rpx'>
         <block wx:for="{{rollData}}" wx:key="">
             <swiper-item style="display=block">
-                <image src="{{imgData[item]}}" style="height:100% " mode="aspectFit">{{itemData}}</image>
+                <image src="{{imgData[item]}}" style="height:100%" mode="aspectFit" class="sp">{{itemData}}</image>
             </swiper-item>
         </block>
     </swiper>
