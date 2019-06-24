@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -90,6 +90,13 @@
 					"id": -1,
 					"name": "搜索页",
 					"pathName": "pages/Search/Search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/Cart/Cart",
 					"scene": null
 				}
 			]

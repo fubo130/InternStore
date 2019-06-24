@@ -1,2 +1,39 @@
-<!--pages/Cart/Cart.wxml-->
-<text>pages/Cart/Cart.wxml</text>
+<scroll-view class="Cart_bg" scroll-y="true">
+    <view class="Cart_area">
+        <block wx:for="{{CartItem}}" wx:key="">
+            <view class="Cart_Item">
+                <view class="Item_left">
+                    <image class="selected" src="../../images/cartSelect0.png" />
+                    <image class="Item_image" src="{{item.Item_Img}}"/>
+                </view>
+                <view class="Item_right">
+                    <view class="Desc">
+                        <text class ="itemNm">{{item.Item_Name}}</text>
+                        <text class ="itemDs">{{item.Item_Desc}}</text>
+                    </view>
+                    <view class="Bottom-area">
+                        <block wx:if="{{Price[index]==0}}">
+                            <text class="Price">现阶段无货</text>
+                        </block>
+                        <block wx:else="">
+                            <text class="Price">{{Price[index]}}</text>
+                        </block>
+                        <view class="num">
+                            <image class="min" src="../../images/-.png" bindtap="dec" id="{{index}}">
+                            </image>
+                            <view class="dig">
+                                {{Amount[index]}}
+                            </view>
+                            <image src="../../images/+.png" class="plus" bindtap="inc" id="{{index}}">
+                            </image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="btn_area">
+
+    </view>
+</scroll-view>

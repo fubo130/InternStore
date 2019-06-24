@@ -63,7 +63,7 @@
     <view class ="all-item">
         <block wx:for="{{list}}"  wx:key="id">
             <view  class="dtl-item" bindtap="clickR1" id="{{item.id}}">
-                <image src="{{item.Item_Img}}" mode="aspectFit" class="item-image"  id="{{item.id}}" bindtap="itemDtl"><text class="dtl-nm">{{item.Item_Name}}</text></image>
+                <image src="{{item.Item_Img}}" mode="aspectFit" class="item-image"><text class="dtl-nm">{{item.Item_Name}}</text></image>
             </view>
         </block>
     </view>

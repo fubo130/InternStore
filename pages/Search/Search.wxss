@@ -64,14 +64,3 @@
     padding-left: 5rpx;
     z-index: 10;
 }
-
-.Selected {
-    background-color: rgb(201, 201, 201);
-    border-bottom: 1rpx solid gray;
-    display: block;
-    margin: auto 30rpx;
-    padding-top: 10rpx;
-    padding-bottom: 10rpx;
-    padding-left: 5rpx;
-    z-index: 10;
-}
