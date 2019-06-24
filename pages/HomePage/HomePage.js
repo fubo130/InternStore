@@ -91,5 +91,14 @@ Page({
             fail: function(res) {},
             complete: function(res) {wx.hideLoading()},
         })
+    },
+    itemDtl: function(res) {
+        console.log(res);
+        wx.navigateTo({
+            url: '../ItemDetail/ItemDetail?ItemID=' + res.currentTarget.id,
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+        })
     }
 })
