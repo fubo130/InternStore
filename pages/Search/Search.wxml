@@ -20,10 +20,18 @@
 
     <!-- 搜索列表 -->
     <block wx:else="{{}}">
-        <block wx:for="{{ResList}}"  wx:key="">
-            <view class="RecRes" id="{{item.id}}" bindtap="select">
-                {{item.Item_Name}}
+        <block wx:if="{{ResList.length==0}}">
+            <view class="RecRes">
+                未找到相关商品
             </view>
+        </block>
+
+        <block wx:else="{{}}">
+            <block wx:for="{{ResList}}"  wx:key="">
+                <view class="RecRes" id="{{item.id}}" bindtap="select">
+                    {{item.Item_Name}}
+                </view>
+            </block>
         </block>
     </block>
 </view>
