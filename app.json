@@ -11,7 +11,8 @@
         "pages/MyHistory/MyHistory",
         "pages/MyAppointment/MyAppointment",
         "pages/MyCoupon/MyCoupon",
-        "pages/ItemDetail/ItemDetail"
+        "pages/ItemDetail/ItemDetail",
+        "pages/Search/Search"
     ],
     "window": {
         "backgroundTextStyle": "light",

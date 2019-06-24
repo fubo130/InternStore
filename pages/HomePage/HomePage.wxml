@@ -1,8 +1,7 @@
 <import src="../../template/HoverButton/HoverButton.wxml"/>
 <scroll-view scroll-y="true" style="height: 100% width: 100%">
-    <view class="SearchBar">
-        
-        <input class="search" name="Phone" placeholder="{{Phone}}" bindinput="bindPInput"></input>
+    <view class="SearchBar" bindtap="goSearch">
+        <view class="search"></view>
         <view class="search-btn" bindtap="search">
             <image src="../../images/search.png" mode="widthFix" style="width: 100%"/>
         </view>

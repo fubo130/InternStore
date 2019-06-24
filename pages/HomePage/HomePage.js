@@ -80,6 +80,16 @@ Page({
                 wx.hideLoading();
             }
         })
+    },
+    goSearch:function() {
+        wx.showLoading({
+            title: '请等待......',
+        })
+        wx.navigateTo({
+            url: '../Search/Search',
+            success: function(res) {},
+            fail: function(res) {},
+            complete: function(res) {wx.hideLoading()},
+        })
     }
-    
 })

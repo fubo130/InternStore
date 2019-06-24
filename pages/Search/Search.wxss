@@ -1,0 +1,77 @@
+.SearchBar {
+     width: 90%;
+     margin-top: 5%;
+     margin-right: 5%;
+     margin-left: 5%;
+     height: 70rpx;
+     border-radius: 100rpx;
+     border: 1rpx solid gainsboro;
+     display: flex;
+     flex-direction: row;
+ }
+
+.SearchBar .search {
+     margin-left: 3%;
+     margin-right: 3%;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     margin-top: 1%;
+ }
+
+.SearchBar .search-btn {
+    width: 10%;
+    margin-right: 2%;
+    margin-left: 30%;
+    height: 70rpx;
+}
+
+.title-area {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2rpx;
+    height: 1000rpx;
+    /* border: 1rpx solid red; */
+}
+
+.title-area .lab {
+    display: block;
+    font-size: 45rpx;
+    /* color: red; */
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+.title-area .title {
+    display: inline-block;
+    flex-flow: row wrap;
+    padding: 5rpx 5rpx;
+    margin-left: 20rpx;
+    margin-top: 40rpx;
+    border-radius: 15rpx;
+    border: solid 1rpx gray;
+    background-color: rgb(231, 231, 231);
+}
+
+.RecRes {
+    background-color: rgb(247, 244, 244);
+    border-bottom: 1rpx solid gray;
+    display: block;
+    margin: auto 30rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    padding-left: 5rpx;
+    z-index: 10;
+}
+
+.Selected {
+    background-color: rgb(201, 201, 201);
+    border-bottom: 1rpx solid gray;
+    display: block;
+    margin: auto 30rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    padding-left: 5rpx;
+    z-index: 10;
+}

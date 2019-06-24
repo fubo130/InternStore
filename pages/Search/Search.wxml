@@ -1,0 +1,29 @@
+<view class="SearchBar">
+    <input class="search" name="Ipt" bindinput="bindInput"></input>
+    <view class="search-btn" bindtap="search">
+        <image src="../../images/search.png" mode="widthFix" style="width: 100%"/>
+    </view>
+</view>
+
+
+<view class="title-area">
+    <!-- 热门标签 -->
+    <block wx:if="{{IsEmpty==true}}">
+        <text class="lab">-热门标签-</text>
+        <block wx:for="{{Recomlist}}"  wx:key="">
+            <view class = "title" id="{{item.id}}" bindtap="select">
+                {{item.Item_Name}}
+            </view>
+        </block>
+    </block>
+
+
+    <!-- 搜索列表 -->
+    <block wx:else="{{}}">
+        <block wx:for="{{ResList}}"  wx:key="">
+            <view class="RecRes" id="{{item.id}}" bindtap="select">
+                {{item.Item_Name}}
+            </view>
+        </block>
+    </block>
+</view>
