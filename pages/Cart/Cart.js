@@ -22,6 +22,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        
         var that = this;
         let uInfo = wx.getStorageSync("userInfo");
         let data = JSON.parse(uInfo);
@@ -158,7 +159,7 @@ Page({
     //     }
     //     console.log(this.data.Amount);
     },
-    Selected: function() {
+    SelectAll: function() {
         if (this.data.OnSelect == "../../images/cartSelect0.png") {
             this.setData({
                 OnSelect: "../../images/cartSelect1.png"
@@ -170,5 +171,8 @@ Page({
                 OnSelect: "../../images/cartSelect0.png"
             })
         }
+    },
+    toItem: function(res) {
+        
     }
 })

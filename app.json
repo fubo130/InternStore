@@ -12,7 +12,8 @@
         "pages/MyAppointment/MyAppointment",
         "pages/MyCoupon/MyCoupon",
         "pages/ItemDetail/ItemDetail",
-        "pages/Search/Search"
+        "pages/Search/Search",
+        "pages/Act/Act"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -38,6 +39,12 @@
                 "text": "分类",
                 "iconPath": "images/department0.png",
                 "selectedIconPath": "images/department1.png"
+            },
+            {
+                "pagePath": "pages/Act/Act",
+                "text": "活动",
+                "iconPath": "images/act0.png",
+                "selectedIconPath": "images/act1.png"
             },
             {
                 "pagePath": "pages/Cart/Cart",

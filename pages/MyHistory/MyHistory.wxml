@@ -1,2 +1,30 @@
+<scroll-view class="Cart_bg" scroll-y="true">
+    <view class="Cart_area">
+        <block wx:if="{{History_Item.length > 0}}">
+            <block wx:for="{{History_Item}}" wx:key="" >
+                <view wx:if="{{item.Item_Img != ''&&item.Item_Img != undefined}}" class="Cart_Item">
+                    <view class="Item_left">
+                        <text class="selected">{{index}}</text>
+                        <image class="Item_image" src="{{item.Item_Img}}"/>
+                    </view>
+                    <view class="Item_right">
+                        <view class="Desc">
+                            <text class ="itemNm">{{item.Item_Name}}</text>
+                            <text class ="itemDs">{{item.Item_Desc}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
 
-<text>pages/MyHistory/MyHistory.wxml</text>
+        <block wx:else="{{}}">
+            <view class="Empty">
+                <image class="EmptyBg" src="../../images/EmptyCart.png" >
+                </image>
+                <text class="EmptyTitle">
+                    您还未浏览过任何商品。
+                </text>
+            </view>
+        </block>
+    </view>
+</scroll-view>

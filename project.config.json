@@ -6,10 +6,12 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -19,10 +21,10 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"nodeModules": true
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.1",
+	"libVersion": "2.7.2",
 	"appid": "wx4d3ef35070a63ac6",
 	"projectname": "store",
 	"debugOptions": {
@@ -49,7 +51,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -97,6 +99,13 @@
 					"id": -1,
 					"name": "购物车",
 					"pathName": "pages/Cart/Cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户足迹",
+					"pathName": "pages/MyHistory/MyHistory",
 					"scene": null
 				}
 			]

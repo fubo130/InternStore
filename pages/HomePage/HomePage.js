@@ -14,6 +14,10 @@ Page({
     },
 
     onLoad(data) {
+        wx.setTabBarBadge({
+            index: 3,
+            text: '6'
+        })
         var that = this;
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", ">", "0"]]&return_sql=true&page=1&perpage=100',
