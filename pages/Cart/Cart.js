@@ -16,6 +16,7 @@ Page({
          */
         Price: [],
         Amount: [],
+        SNum: 0
     },
 
     /**
@@ -26,11 +27,14 @@ Page({
         var that = this;
         let uInfo = wx.getStorageSync("userInfo");
         let data = JSON.parse(uInfo);
+        
+        
         wx.showLoading({
             title: '请稍后......',
         })
         that.setData({
-            OnSelect: "../../images/cartSelect0.png"
+            OnSelect: "../../images/cartSelect0.png",
+            SNum: 0
         })
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Cart',
@@ -50,6 +54,14 @@ Page({
                     that.setData({
                         SubTotal: 0,
                         IsEmpty: false
+                    })
+                    var a = [];
+                    for (var i = 0; i < that.data.CartItemID.length; i++) {
+                        a.push("../../images/cartSelect0.png");
+                    }
+                    console.log(a);
+                    that.setData({
+                        Selected: a
                     })
                     // console.log(that.data);
                     var lst = [];
@@ -141,7 +153,7 @@ Page({
     },
 
     dec:function(res) {
-    //     // console.log(res.currentTarget.id);
+        console.log(res.currentTarget.id);
     //     var tmp;
     //     var ls;
     //     tmp = this.data.Amount[res.currentTarget.id];
@@ -158,21 +170,86 @@ Page({
     //         })
     //     }
     //     console.log(this.data.Amount);
-    },
-    SelectAll: function() {
-        if (this.data.OnSelect == "../../images/cartSelect0.png") {
-            this.setData({
-                OnSelect: "../../images/cartSelect1.png"
-            })
-        }
+    // },
+    // SelectAll: function() {
+    //     if (this.data.OnSelect == "../../images/cartSelect0.png") {
+    //         this.setData({
+    //             OnSelect: "../../images/cartSelect1.png"
+    //         })
+    //     }
 
-        else {
-            this.setData({
-                OnSelect: "../../images/cartSelect0.png"
-            })
-        }
+    //     else {
+    //         this.setData({
+    //             OnSelect: "../../images/cartSelect0.png"
+    //         })
+    //     }
     },
     toItem: function(res) {
         
-    }
+    },
+    Selected: function(res) {
+        console.log(res.currentTarget)
+        console.log(this.data.Price[res.currentTarget.id])
+        var tmp = this.data.Selected;
+        var p = this.data.SubTotal;
+        var i = parseInt(this.data.Price[res.currentTarget.id]);
+        console.log(i)
+        var l = this.data.SNum;
+
+        if (tmp[res.currentTarget.id] == "../../images/cartSelect0.png") {
+            tmp[res.currentTarget.id] = "../../images/cartSelect1.png";
+            p = p + i;
+            l = l + 1;
+        }
+
+        else {
+            tmp[res.currentTarget.id] = "../../images/cartSelect0.png";
+            p = p - i;
+            l = l - 1;
+        }
+
+        this.setData({
+            Selected: tmp,
+            SubTotal: p,
+            SNum: l
+        })
+        
+    },
+
+    SelectAll: function (res) {
+        console.log(res)
+        var tmp = this.data.Selected;
+        var s = this.data.SubTotal;
+        var n = this.data.SNum;
+        console.log(this.data.SNum)
+        console.log(n +" ??? "+this.data.CartItemID.length-1);
+        if (n == this.data.CartItemID.length-1) {
+            console.log("already selected all")
+            for (var i = 0; i < this.data.CartItemID.length; i++) {
+                tmp[i] = "../../images/cartSelect0.png";
+                s = 0;
+                n = 0;
+            }
+        }
+
+        else {
+            for (var i = 0; i < this.data.CartItemID.length; i++) {
+                console.log(" selected : " + i)
+                if (tmp[i] == "../../images/cartSelect0.png") {
+                    var m = parseInt(this.data.Price[i]);
+                    tmp[i] = "../../images/cartSelect1.png";
+                    s = s + m;
+                    n = n + 1;
+                }
+            }
+        }
+        console.log(tmp);
+        console.log(s);
+        console.log(n);
+        this.setData({
+            Selected: tmp,
+            SubTotal: s,
+            SNumL: n
+        })
+    } 
 })

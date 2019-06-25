@@ -101,7 +101,7 @@ page {
     width: 50rpx;
     height: 50rpx;
     /* border: 1rpx solid black;  */
-    margin: auto 0;
+    margin: auto 10rpx;
 }
 
 .Item_left .Item_image {

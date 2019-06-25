@@ -3,13 +3,13 @@
         <block wx:for="{{CartItem}}" wx:key="">
             <view class="Cart_Item">
                 <view class="Item_left">
-                    <image class="selected" bindtap="Selected" src="{{OnSelect}}" />
-                    <image class="Item_image" src="{{item.Item_Img}}" bindtap="toItem"/>
+                    <image class="selected" bindtap="Selected" src="{{Selected[index]}}" id = "{{index}}" />
+                    <image class="Item_image" src="{{item.Item_Img}}" bindtap="toItem" id = "{{index}}" />
                 </view>
                 <view class="Item_right">
                     <view class="Desc">
-                        <text class ="itemNm" bindtap="toItem">{{item.Item_Name}}</text>
-                        <text class ="itemDs" bindtap="toItem">{{item.Item_Desc}}</text>
+                        <text class ="itemNm" bindtap="toItem" id = "{{index}}" >{{item.Item_Name}}</text>
+                        <text class ="itemDs" bindtap="toItem" id = "{{index}}" >{{item.Item_Desc}}</text>
                     </view>
                     <view class="Bottom-area">
                         <block wx:if="{{Price[index]==0}}">
@@ -34,7 +34,7 @@
     </view>
 
     <view class="btn_area">
-        <view class="SelectAll">
+        <view class="SelectAll" >
             <image class="selected2" bindtap="SelectAll" src="{{OnSelect}}" />
             <text class="Slt-text">全选</text>
         </view>
@@ -42,7 +42,7 @@
             <text class="Sub-text">合计:<text style="color:rgb(255,44,44)"> ¥{{SubTotal}}</text></text>
         </view>
         <view class="checkout-btn">
-            <text style="margin: auto auto">结算({{SubTotal}})</text>
+            <text style="margin: auto auto">结算({{SNum}})</text>
         </view>
     </view>
 </scroll-view>
