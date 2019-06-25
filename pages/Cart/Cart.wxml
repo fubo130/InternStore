@@ -3,7 +3,7 @@
         <block wx:for="{{CartItem}}" wx:key="">
             <view class="Cart_Item">
                 <view class="Item_left">
-                    <image class="selected" src="../../images/cartSelect0.png" />
+                    <image class="selected" bindtap="Selected" src="{{OnSelect}}" />
                     <image class="Item_image" src="{{item.Item_Img}}"/>
                 </view>
                 <view class="Item_right">
@@ -16,7 +16,7 @@
                             <text class="Price">现阶段无货</text>
                         </block>
                         <block wx:else="">
-                            <text class="Price">{{Price[index]}}</text>
+                            <text class="Price">¥ {{Price[index]}}</text>
                         </block>
                         <view class="num">
                             <image class="min" src="../../images/-.png" bindtap="dec" id="{{index}}">
@@ -34,6 +34,15 @@
     </view>
 
     <view class="btn_area">
-
+        <view class="SelectAll">
+            <image class="selected2" bindtap="Selected" src="{{OnSelect}}" />
+            <text class="Slt-text">全选</text>
+        </view>
+        <view class="subTt">
+            <text class="Sub-text">合计：<text style="color:rgb(255,44,44)">¥ {{SubTotal}}</text></text>
+        </view>
+        <view class="checkout-btn">
+            <text style="margin: auto auto">结算({{SubTotal}})</text>
+        </view>
     </view>
 </scroll-view>

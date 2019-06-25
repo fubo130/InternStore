@@ -10,6 +10,62 @@ page {
     width: 100%;
 }
 
+.SelectAll {
+    height: 50rpx; 
+    margin-top: 30rpx;
+    margin-bottom: 20rpx; 
+    margin-left: 1%;
+    /* border: 1rpx solid gray; */
+    padding: 2rpx 10rpx;
+    width: 200rpx;
+    /* border-radius: 13rpx; */
+    /* background-color: rgb(248, 247, 247); */
+    display: flex;
+    flex-direction: row;
+}
+
+.SelectAll .Slt-text {
+
+    font-size: 33rpx;
+    margin:  auto 20rpx;
+    color: rgb(78, 78, 78);
+}
+.subTt {
+    margin: auto 15rpx;
+    width: fit-content;
+    height: 70rpx;
+    /* border: 1rpx solid rgb(255, 0, 0); */
+    display: flex;
+    flex-direction: row;
+}
+
+.subTt .Sub-text {
+    /* color: rgb(240, 70, 70); */
+    font-size: 40rpx;
+    margin:  auto 20rpx;
+}
+
+.SelectAll .selected2 {
+    width: 50rpx;
+    height: 50rpx;
+    /* border: 1rpx solid black;  */
+    margin: auto 0;
+}
+
+.btn_area .checkout-btn {
+    /* border: 1rpx solid red; */
+    margin-top: 0;
+    height: 100%;
+    width: 225rpx;
+    margin-right: 0;
+    margin-left: auto;
+    background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: whitesmoke;
+}
+
 .Cart_bg .Cart_area {
     height: 90%;
     width: 100%;
@@ -147,4 +203,6 @@ page {
     background-color: rgb(240, 240, 240); 
     position: fixed;
     border-top: 3rpx solid rgb(148, 148, 148);
+    display: flex;
+    flex-direction: row;
 }

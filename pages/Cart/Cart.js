@@ -10,6 +10,7 @@ Page({
         Selected: [],
         SubTotal: 0,
         IsEmpty: true,
+        OnSelect: "../../images/cartSelect0.png",
         /**
          * 这项是要modif的
          */
@@ -27,7 +28,9 @@ Page({
         wx.showLoading({
             title: '请稍后......',
         })
-
+        that.setData({
+            OnSelect: "../../images/cartSelect0.png"
+        })
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Cart',
             success(res) {
@@ -154,5 +157,18 @@ Page({
     //         })
     //     }
     //     console.log(this.data.Amount);
+    },
+    Selected: function() {
+        if (this.data.OnSelect == "../../images/cartSelect0.png") {
+            this.setData({
+                OnSelect: "../../images/cartSelect1.png"
+            })
+        }
+
+        else {
+            this.setData({
+                OnSelect: "../../images/cartSelect0.png"
+            })
+        }
     }
 })

@@ -114,12 +114,22 @@ Page({
                 }
                 if (tmp.indexOf(that.data.ItemID) == -1) {
                     tmp.push(that.data.ItemID);
-                    console.log("不存在（添加）："+tmp)
+                    console.log("不存在（添加）："+tmp);
+                    wx.showToast({
+                        title: '您已成功收藏',
+                        image: '../../images/like.png',
+                        duration: 2000
+                    })
                 }
                 else {
                     tmp.splice(tmp.indexOf(that.data.ItemID), 1, that.data.ItemID);
                     delete tmp[tmp.indexOf(that.data.ItemID)];
-                    console.log("存在（删除）：" + tmp)
+                    console.log("存在（删除）：" + tmp);
+                    wx.showToast({
+                        title: '您已取消收藏',
+                        image: '../../images/dislike.png',
+                        duration: 2000
+                    })
                 }
                 for (var i = 0; i < tmp.length; i++) {
                     if (tmp[i] == "" || tmp[i] == undefined) {
