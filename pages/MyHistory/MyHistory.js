@@ -106,5 +106,53 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    gotoItem:function(res) {
+        console.log(res)
+
+        let uInfo = wx.getStorageSync("userInfo");
+        let data = JSON.parse(uInfo);
+        var history = "";
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=User_History',
+            success: function (e) {
+                console.log(e);
+                history = e.data.data.data.User_History;
+                if (e.data.data.data.User_History != "") {
+                    history += ",";
+                    history += res.currentTarget.id;
+                }
+                else {
+                    history += res.currentTarget.id;
+                }
+
+                console.log(history);
+                wx.request({
+                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + e.data.data.data.id + '&data={"User_History":"' + history + '"}',
+                    success: function (e2) {
+                        console.log("足迹更新：", e2)
+                    },
+                    fail: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                })
+            },
+            fail: function (e) {
+
+            },
+            complete: function () {
+            }
+        })
+
+        wx.navigateTo({
+            url: '../ItemDetail/ItemDetail?ItemID=' + res.currentTarget.id,
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+        })
     }
 })

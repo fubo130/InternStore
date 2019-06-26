@@ -2,7 +2,7 @@
     <view class="Cart_area">
         <block wx:if="{{History_Item.length > 0}}">
             <block wx:for="{{History_Item}}" wx:key="" >
-                <view wx:if="{{item.Item_Img != ''&&item.Item_Img != undefined}}" class="Cart_Item">
+                <view wx:if="{{item.Item_Img != ''&&item.Item_Img != undefined}}" class="Cart_Item" id = "{{item.id}}" bindtap="gotoItem">
                     <view class="Item_left">
                         <text class="selected">{{index}}</text>
                         <image class="Item_image" src="{{item.Item_Img}}"/>

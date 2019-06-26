@@ -245,10 +245,11 @@ Page({
         }
 
         else {
+            
             var tmp = this.data.Amount;
             tmp[res.currentTarget.id] = parseInt(tmp[res.currentTarget.id]) + 1;
             var x = this.data.SubTotal;
-            x = x + this.data.Price[res.currentTarget.id] * tmp[res.currentTarget.id];
+            x = x + parseInt(this.data.Price[res.currentTarget.id]);
             var that = this;
             wx.request({
                 url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + that.data.UserID + '&data={"Amount":"' + tmp + '"}',
@@ -274,14 +275,55 @@ Page({
     },
 
     toItem: function(res) {
-        
+        var that = this;
+        console.log("userid: "+that.data.UserID);
+        var history = "";
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id","=","' + that.data.UserID + '"]]&fields=User_History',
+            success: function (e) {
+                console.log(e);
+                history = e.data.data.data.User_History;
+                if (e.data.data.data.User_History != "") {
+                    history += ",";
+                    history += that.data.CartItem[res.currentTarget.id].id;
+                }
+                else {
+                    history += that.data.CartItem[res.currentTarget.id].id;
+                }
+
+                console.log(history);
+                wx.request({
+                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + e.data.data.data.id + '&data={"User_History":"' + history + '"}',
+                    success: function (e2) {
+                        console.log("足迹更新：", e2)
+                    },
+                    fail: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                })
+            },
+            fail: function (e) {
+
+            },
+            complete: function () {
+            }
+        })
+        wx.navigateTo({
+            url: '../ItemDetail/ItemDetail?ItemID='+that.data.CartItem[res.currentTarget.id].id,
+            success: function(res) {},
+            fail: function(res) {},
+            complete: function(res) {},
+        })
     },
     Selected: function(res) {
         console.log(res.currentTarget)
         console.log(this.data.Price[res.currentTarget.id])
         var tmp = this.data.Selected;
         var p = this.data.SubTotal;
-        var i = parseInt(this.data.Price[res.currentTarget.id]) * parseInt(this.data.Amount[res.currentTarget.id]);
+        var i = parseInt(this.data.Price[res.currentTarget.id])*parseInt(this.data.Amount[res.currentTarget.id]);
         console.log(i)
         var l = this.data.SNum;
 

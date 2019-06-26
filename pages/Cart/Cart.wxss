@@ -149,6 +149,7 @@ page {
 }
 
 .Item_right .Bottom-area {
+    margin-bottom: 0;
     height: 30%;
     width: 100%;
     /* border: 1rpx solid paleturquoise; */
@@ -165,7 +166,7 @@ page {
 
 .Bottom-area .num {
     width: 50%;
-    height: 100%;
+    height: fit-content;
     /* border: 1rpx solid red; */
     margin-right: 0;
     margin-left: auto;
@@ -189,6 +190,8 @@ page {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: auto auto;
+    font-size: 40rpx;
 }
 
 .num .min {

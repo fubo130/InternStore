@@ -129,7 +129,7 @@
                 收藏
             </view>
         </view>
-        <view class="btn3">
+        <view class="btn3" bindtap='btnCart'>
             <text class="btn-text">加入购物车</text>
         </view>
         <view class="btn2">

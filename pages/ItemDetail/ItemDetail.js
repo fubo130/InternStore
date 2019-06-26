@@ -13,7 +13,7 @@ Page({
         ShowDesc: "",
         DescDetail: "",
         like_btn: "../../images/like1.png",
-        DesSelect: 1
+        DesSelect: 1,
     },
 
     onLoad: function (options) {
