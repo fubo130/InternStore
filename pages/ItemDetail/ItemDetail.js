@@ -185,6 +185,47 @@ Page({
             fail: function (e) { },
             complete: function (e) { },
         })
+    },
+    addToCart: function() {
+        console.log(this.data.ItemID);
+        var idList = [];
+        let uInfo = wx.getStorageSync("userInfo");
+        let data = JSON.parse(uInfo);
+        var that = this;
+        var d;
+        var amt;
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Cart,Amount',
+            success: function (e) {
+                console.log(e);
+                idList = e.data.data.data.Cart.split(",");
+                d = e.data.data.data.id;
+                amt = e.data.data.data.Amount.split(",");
+            },
+            fail(){},
+            complete(){
+                console.log(idList);
+                idList.push(that.data.ItemID);
+                console.log(idList);
+                amt.push(1);
+                wx.request({
+                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + d + '&data={"Cart":"' + idList + '","Amount":"' + amt + '"}',
+                    success: function (e2) {
+                        console.log(e2)
+                    },
+                    fail: function () {
+
+                    },
+                    complete: function () {
+                        wx.showToast({
+                            title: '成功加入购物车',
+                        })
+                    }
+                })
+            }
+        })
+        
+        
     }
 
 })

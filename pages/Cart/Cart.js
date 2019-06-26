@@ -155,6 +155,7 @@ Page({
     },
 
     dec:function(res) {
+
         console.log(res.currentTarget.id);
         if (this.data.Amount[res.currentTarget.id]>1) {
             var tmp = this.data.Amount;
