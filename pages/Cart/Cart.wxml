@@ -21,7 +21,7 @@
                         <view class="num">
                             <image class="min" src="../../images/-.png" bindtap="dec" id="{{index}}">
                             </image>
-                            <view class="dig">
+                            <view class="dig" id="{{index}}">
                                 {{Amount[index]}}
                             </view>
                             <image src="../../images/+.png" class="plus" bindtap="inc" id="{{index}}">

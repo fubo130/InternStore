@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        UserID: 0,
         CartItem: [],
         CartItemID: [],
         Selected: [],
@@ -23,7 +24,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
         var that = this;
         let uInfo = wx.getStorageSync("userInfo");
         let data = JSON.parse(uInfo);
@@ -37,11 +37,13 @@ Page({
             SNum: 0
         })
         wx.request({
-            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Cart',
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Cart,Amount',
             success(res) {
-                console.log(res)
+                console.log(res.data.data.data.Cart)
                 that.setData({
-                    CartItemID: res.data.data.data.Cart.split(",")
+                    CartItemID: res.data.data.data.Cart.split(","),
+                    Amount: res.data.data.data.Amount.split(","),
+                    UserID: res.data.data.data.id
                 })
                  console.log(that.data.CartItemID);
                 if (that.data.CartItemID[0] == -1) {
@@ -66,7 +68,7 @@ Page({
                     // console.log(that.data);
                     var lst = [];
                     var tp =[];
-                    var a = [];
+                    // var a = [];
                     for (var i = 0; i < that.data.CartItemID.length; i++) {
                         wx.request({
                             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "=", "' + that.data.CartItemID[i] + '"]]&return_sql=true&page=1&perpage=100',
@@ -74,7 +76,7 @@ Page({
                                 console.log(res);
                                 lst.push(res.data.data.data);
                                 var x = res.data.data.data.Price.split(",");
-                                a.push(1);
+                                // a.push(1);
                                 tp.push(x[0]);
                                 console.log("x",x);
                                 console.log(tp);
@@ -84,7 +86,7 @@ Page({
                                 that.setData({
                                     CartItem: lst,
                                     Price: tp,
-                                    Amount: a
+                                    // Amount: a
                                 })
                                 console.log("CartItem: " + that.data.CartItem[0].Item_Img)
                                 console.log("Price: " + that.data.Price)
@@ -154,36 +156,123 @@ Page({
 
     dec:function(res) {
         console.log(res.currentTarget.id);
-    //     var tmp;
-    //     var ls;
-    //     tmp = this.data.Amount[res.currentTarget.id];
-    //     console.log(tmp);
-    //     // if (tmp>0) {
-    //         tmp = tmp-1;
-    //         for (var i = 0; i < this.data.Amount.length; i++) {
-    //             ls[i] = this.data.Amount[i]
-    //         // }
-    //         ls[res.currentTarget.id] = tmp;
-    //         console.log("ls: "+ls);
-    //         this.setData({
-    //             Amount: ls
-    //         })
-    //     }
-    //     console.log(this.data.Amount);
-    // },
-    // SelectAll: function() {
-    //     if (this.data.OnSelect == "../../images/cartSelect0.png") {
-    //         this.setData({
-    //             OnSelect: "../../images/cartSelect1.png"
-    //         })
-    //     }
+        if (this.data.Amount[res.currentTarget.id]>1) {
+            var tmp = this.data.Amount;
+            var sum = this.data.SubTotal;
+            tmp[res.currentTarget.id] = tmp[res.currentTarget.id]-1;
+            sum = sum - this.data.Price[res.currentTarget.id]
+            var that = this;
+            wx.request({
+                url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + that.data.UserID + '&data={"Amount":"' + tmp + '"}',
+                success: function (e2) {
+                    console.log(e2)
+                },
+                fail: function () {
 
-    //     else {
-    //         this.setData({
-    //             OnSelect: "../../images/cartSelect0.png"
-    //         })
-    //     }
+                },
+                complete: function () {
+                    that.setData({
+                        Amount: tmp
+                    })
+                    if (that.data.Selected[res.currentTarget.id] == "../../images/cartSelect1.png") {
+                        that.setData({
+                            SubTotal: sum
+                        })
+                    }
+                }
+            })
+
+            
+
+        }
+        
+        else if (this.data.Amount[res.currentTarget.id] == 1) {
+            var that = this;
+            wx.showModal({
+                title: '提示',
+                content: '您确定要删除这个物品么？',
+                success: function (e) {
+                    if (e.confirm) {
+                        console.log('用户点击确定');
+
+                        var it = [];
+                        var amt = [];
+                        var id = [];
+                        var pc = [];
+                        for (var i = 0; i < that.data.CartItem.length; i++) {
+                            if (res.currentTarget.id != i) {
+                                it.push(that.data.CartItem[i]);
+                                amt.push(that.data.Amount[i]);
+                                id.push(that.data.CartItemID[i]);
+                                pc.push(that.data.Price[i]);
+                            }
+                            console.log(it)
+                        }
+                        that.setData({
+                            CartItem: it,
+                        })
+                        wx.request({
+                            url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + that.data.UserID + '&data={"Cart":"' + id + '","Amount":"'+amt+'"}',
+                            success: function (e2) {
+                                console.log(e2)
+                            },
+                            fail: function () {
+
+                            },
+                            complete: function () {
+                                wx.showToast({
+                                    title: '成功移除该商品',
+                                })
+                            }
+                        })
+                        
+                    } else if (e.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
+            })  
+        }
+
     },
+
+    inc: function(res) {
+        console.log(res.currentTarget.id);
+        if (this.data.Amount[res.currentTarget.id] >= 9) {
+            wx.showToast({
+                title: '已达最大限购数',
+                image: '../../images/dislike.png'
+            })
+        }
+
+        else {
+            var tmp = this.data.Amount;
+            tmp[res.currentTarget.id] = parseInt(tmp[res.currentTarget.id]) + 1;
+            var x = this.data.SubTotal;
+            x = x + this.data.Price[res.currentTarget.id] * tmp[res.currentTarget.id];
+            var that = this;
+            wx.request({
+                url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + that.data.UserID + '&data={"Amount":"' + tmp + '"}',
+                success: function (e2) {
+                    console.log(e2)
+                },
+                fail: function () {
+
+                },
+                complete: function () {
+                    that.setData({
+                        Amount: tmp,
+                        
+                    })
+                    if (that.data.Selected[res.currentTarget.id] == "../../images/cartSelect1.png") {
+                        that.setData({
+                            SubTotal: x
+                        })
+                    }
+                }
+            })
+        }
+    },
+
     toItem: function(res) {
         
     },
@@ -192,7 +281,7 @@ Page({
         console.log(this.data.Price[res.currentTarget.id])
         var tmp = this.data.Selected;
         var p = this.data.SubTotal;
-        var i = parseInt(this.data.Price[res.currentTarget.id]);
+        var i = parseInt(this.data.Price[res.currentTarget.id]) * parseInt(this.data.Amount[res.currentTarget.id]);
         console.log(i)
         var l = this.data.SNum;
 
@@ -207,49 +296,64 @@ Page({
             p = p - i;
             l = l - 1;
         }
+        
+        if (l == this.data.CartItemID.length) {
+            this.setData({
+                OnSelect: "../../images/cartSelect1.png"
+            })
+        }
+        else {
+            this.setData({
+                OnSelect: "../../images/cartSelect0.png"
+            })
+        }
 
         this.setData({
             Selected: tmp,
             SubTotal: p,
-            SNum: l
+            SNum: l,
         })
+
         
     },
 
     SelectAll: function (res) {
         console.log(res)
-        var tmp = this.data.Selected;
-        var s = this.data.SubTotal;
-        var n = this.data.SNum;
-        console.log(this.data.SNum)
-        console.log(n +" ??? "+this.data.CartItemID.length-1);
-        if (n == this.data.CartItemID.length-1) {
-            console.log("already selected all")
+        console.log(this.data.SNum);
+        console.log(this.data.CartItemID.length);
+        var num = this.data.SNum;
+        var slted = this.data.Selected;
+        var tt = this.data.SubTotal;
+        if (this.data.SNum != this.data.CartItemID.length) {
+            console.log("未全选！");
             for (var i = 0; i < this.data.CartItemID.length; i++) {
-                tmp[i] = "../../images/cartSelect0.png";
-                s = 0;
-                n = 0;
-            }
-        }
-
-        else {
-            for (var i = 0; i < this.data.CartItemID.length; i++) {
-                console.log(" selected : " + i)
-                if (tmp[i] == "../../images/cartSelect0.png") {
-                    var m = parseInt(this.data.Price[i]);
-                    tmp[i] = "../../images/cartSelect1.png";
-                    s = s + m;
-                    n = n + 1;
+                if (slted[i] == "../../images/cartSelect0.png") {
+                    slted[i] = "../../images/cartSelect1.png";
+                    tt = tt + parseInt(this.data.Price[i]);
+                    num = num + 1;
                 }
             }
+            this.setData({
+                OnSelect: "../../images/cartSelect1.png"
+            })
         }
-        console.log(tmp);
-        console.log(s);
-        console.log(n);
+        
+        else {
+            console.log("已全选！");
+            num = 0;
+            tt = 0;
+            for (var i = 0; i < this.data.CartItemID.length; i++) {
+                slted[i] = "../../images/cartSelect0.png";
+            }
+            this.setData({
+                OnSelect: "../../images/cartSelect0.png"
+            })
+        }
+
         this.setData({
-            Selected: tmp,
-            SubTotal: s,
-            SNumL: n
+            SNum: num,
+            Selected: slted,
+            SubTotal: tt
         })
     } 
 })
