@@ -19,7 +19,28 @@ Page({
             title: '请等待......',
         })
 
-        let that = this;
+
+
+        var that = this;
+        let uInfo = wx.getStorageSync("userInfo");
+        let d = JSON.parse(uInfo);
+        var l;
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + d.BindOpenID + '"]]&fields=Cart',
+            success(res) {
+                console.log(res);
+                l = res.data.data.data.Cart.split(",");
+                console.log(l);
+            },
+            fail() { },
+            complete() {
+                wx.setTabBarBadge({
+                    index: 3,
+                    text: l.length + ''
+                })
+            }
+        })
+
         this.setData({
             lSelect: 1
         })

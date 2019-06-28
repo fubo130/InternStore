@@ -204,28 +204,45 @@ Page({
             },
             fail(){},
             complete(){
-                console.log(idList);
-                idList.push(that.data.ItemID);
-                console.log(idList);
-                amt.push(1);
-                wx.request({
-                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + d + '&data={"Cart":"' + idList + '","Amount":"' + amt + '"}',
-                    success: function (e2) {
-                        console.log(e2)
-                    },
-                    fail: function () {
+                if (amt.indexOf(that.data.ItemID)==-1) {
+                    console.log(idList);
+                    idList.push(that.data.ItemID);
+                    console.log(idList);
+                    amt.push(1);
+                    wx.request({
+                        url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + d + '&data={"Cart":"' + idList + '","Amount":"' + amt + '"}',
+                        success: function (e2) {
+                            console.log(e2)
+                        },
+                        fail: function () {
 
-                    },
-                    complete: function () {
-                        wx.showToast({
-                            title: '成功加入购物车',
-                        })
-                    }
-                })
+                        },
+                        complete: function () {
+                            wx.showToast({
+                                title: '成功加入购物车',
+                            })
+                        }
+                    })
+                }  
+                else {
+                    // 错误；
+                    amt[idList.indexOf(that.data.ItemID)] = parseInt(amt[idList.indexOf(that.data.ItemID)])+1;
+                    wx.request({
+                        url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + d + '&data={"Amount":"' + amt + '"}',
+                        success: function (e2) {
+                            console.log(e2)
+                        },
+                        fail: function () {
+
+                        },
+                        complete: function () {
+                            wx.showToast({
+                                title: '成功加入购物车',
+                            })
+                        }
+                    })
+                }
             }
         })
-        
-        
     }
-
 })

@@ -27,9 +27,31 @@ Page({
         })
 
 
+
+
         let that= this;
         let uInfo = wx.getStorageSync("userInfo");
         let data = JSON.parse(uInfo);
+
+
+        var l;
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Cart',
+            success(res) {
+                console.log(res);
+                l = res.data.data.data.Cart.split(",");
+                console.log(l);
+            },
+            fail() { },
+            complete() {
+                wx.setTabBarBadge({
+                    index: 3,
+                    text: l.length + ''
+                })
+            }
+        })
+
+
         console.log(data);
         if (data.BindOpenID != '' && data.BindOpenID !=undefined) {
             this.setData({

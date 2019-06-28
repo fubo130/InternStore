@@ -13,7 +13,8 @@
         "pages/MyCoupon/MyCoupon",
         "pages/ItemDetail/ItemDetail",
         "pages/Search/Search",
-        "pages/Act/Act"
+        "pages/Act/Act",
+        "pages/Coupon/Coupon"
     ],
     "window": {
         "backgroundTextStyle": "light",

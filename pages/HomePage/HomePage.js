@@ -17,14 +17,26 @@ Page({
     onLoad(data) {
         
         var that = this;
-
+        let uInfo = wx.getStorageSync("userInfo");
+        let d = JSON.parse(uInfo);
+        var l;
         wx.request({
-            url: '',
-            success(res) {},
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + d.BindOpenID + '"]]&fields=Cart',
+            success(res) {
+                console.log(res);
+                l = res.data.data.data.Cart.split(",");
+                console.log(l);
+            },
             fail() {},
-            complete() {}
+            complete() {
+                wx.setTabBarBadge({
+                    index: 3,
+                    text: l.length + ''
+                })
+            }
         })
 
+        
 
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", ">", "0"]]&return_sql=true&page=1&perpage=100',
