@@ -1,22 +1,25 @@
-<view wx:if="true">
-  <view class='header'>
-    <open-data type="userAvatarUrl"></open-data>
-  </view>
-
-  <view class='content'>
-    <view style="text-align: center">申请获取以下权限</view>
-    <text style="text-align: center">获得你的公开信息(昵称，头像等)</text>
-  </view>
-
-  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-    授权登录
-  </button>
-
-  <view class="weui-footer">
-    <view class="weui-footer__links">
-      <navigator url="" class="weui-footer__link"></navigator>
+<view class="pg">
+    <view wx:if="true">
+    <view class='header'>
+        <open-data type="userAvatarUrl"></open-data>
     </view>
-  </view>
-</view>
 
-<view wx:else>请升级微信版本</view>
+    <view class='content'>
+        <view style="text-align: center">申请获取以下权限</view>
+        <text style="text-align: center">获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+
+    <view class="weui-footer">
+        <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link"></navigator>
+        </view>
+    </view>
+    </view>
+
+    <view wx:else>请升级微信版本</view>
+
+</view>

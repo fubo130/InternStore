@@ -41,7 +41,7 @@ Page({
                                     })
                                 }
                             })
-
+                    
                             //用户已经授权过
                             wx.switchTab({
                                 url: '/pages/HomePage/HomePage'

@@ -52,11 +52,27 @@ Page({
         that.setData({
             ItemID: options.ItemID
         })
+        var m = [];
+        var sg = "";
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "=", "+'+options.ItemID+'"]]&return_sql=true',
             success:function(res) {
+                m = res.data.data.list[0].Price;
+                console.log("m: ", m)
+                for (var i = 0; i < m.length && m[i]!=","; i++) {
+                    sg=sg+m[i];
+                }
+                console.log(sg);
+
+                //sg = m[0];
+                // for (var index = 0; index < m.length; index++) {
+                //     var tmp = m.split(",");
+                //     console.log(tmp);
+                //     sg.push(tmp[0]);
+                // }
+                console.log(sg);
                 that.setData({
-                    ItemPrice: res.data.data.list[0].Price,
+                    ItemPrice: sg,
                     ItemName: res.data.data.list[0].Item_Name,
                     ItemCategory: res.data.data.list[0].Item_Category,
                     Item_Image: res.data.data.list[0].Item_Img,
@@ -204,7 +220,8 @@ Page({
             },
             fail(){},
             complete(){
-                if (amt.indexOf(that.data.ItemID)==-1) {
+                console.log("idList", idList)
+                if (idList.indexOf(that.data.ItemID)==-1) {
                     console.log(idList);
                     idList.push(that.data.ItemID);
                     console.log(idList);
