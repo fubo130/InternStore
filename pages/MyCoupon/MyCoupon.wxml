@@ -1,2 +1,37 @@
-
-<text>pages/MyCoupon/MyCoupon.wxml</text>
+<scroll-view class="Coupon-background" scroll-y="true">
+    <block wx:if="{{UserCoupons.length!=0 && UserCoupons.indexOf(0)==-1}}">
+        <block wx:for="{{Coupons}}" wx:key="">
+            <view wx:if="{{UserCoupons.indexOf(item.id)==-1}}" class="coupon" bindtap="addCoupon" id = "{{index}}">
+                <view class="coupon-left">
+                    <view class="left-content">
+                        <view class="left-top">
+                            ¥ {{Value[index]}}
+                        </view>
+                        <view class="left-bottom">
+                            满{{Price[index]}}元可用
+                            <text class="text">点击使用</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="coupon-right">
+                    <view class="right-content">
+                        <view class="right-top">
+                            {{item.Coupon_Detail}}
+                        </view>
+                        <view class="right-bottom">
+                            {{TimeS[index]}} ~ {{TimeE[index]}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </block>
+    <block wx:else="{{}}">
+        <view class="Empty">
+            <image class="EmptyBg" src="../../images/EmptyCoupon.png" ></image>
+            <text class="EmptyTitle">
+                暂无优惠券，去领券中心看一看吧。
+            </text>
+        </view>
+    </block>
+</scroll-view>

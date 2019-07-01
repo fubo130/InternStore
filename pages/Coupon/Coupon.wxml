@@ -1,1 +1,37 @@
-
+<scroll-view class="Coupon-background" scroll-y="true">
+    <block wx:if="{{Coupons.length!=0}}">
+        <block wx:for="{{Coupons}}" wx:key="">
+            <view class="coupon" bindtap="addCoupon" id = "{{index}}">
+                <view class="coupon-left">
+                    <view class="left-content">
+                        <view class="left-top">
+                            ¥ {{Value[index]}}
+                        </view>
+                        <view class="left-bottom">
+                            满{{Price[index]}}元可用
+                            <text class="text">点击领取</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="coupon-right">
+                    <view class="right-content">
+                        <view class="right-top">
+                            {{item.Coupon_Detail}}
+                        </view>
+                        <view class="right-bottom">
+                            {{TimeS[index]}} ~ {{TimeE[index]}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </block>
+    <block wx:else="{{}}">
+        <view class="Empty">
+            <image class="EmptyBg" src="../../images/EmptyCoupon.png" ></image>
+            <text class="EmptyTitle">
+                暂无其他优惠活动。
+            </text>
+        </view>
+    </block>
+</scroll-view>

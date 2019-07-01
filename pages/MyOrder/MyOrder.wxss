@@ -120,6 +120,7 @@
     width: fit-content;
     height: 100%;
     color: rgb(255, 166, 0);
+    font-size: 35rpx;
     /* border: 1rpx solid red; */
 }
 
@@ -129,7 +130,20 @@
     width: 40%;
     /* border: 1rpx solid red; */
     /* margin: auto 21rpx; */
-    margin-left: 40rpx;
+    margin-left: auto;
+    margin-right: 10rpx;
     /* display: flex; */
     /* flex-direction: row; */
+}
+
+.Cart_Item .close {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 50rpx;
+    left: auto;
+    margin-top: 10rpx;
+    /* top: 10rpx;
+    bottom: auto; */
+    /* z-index: 999; */
 }

@@ -261,5 +261,10 @@ Page({
                 }
             }
         })
+    },
+    toCoupon:function() {
+        wx.navigateTo({
+            url: '../Coupon/Coupon',
+        })
     }
 })

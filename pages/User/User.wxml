@@ -30,7 +30,7 @@
                     </view>
                     <view class="btn-row" bindtap="My_appointment">
                         <image class="btn-image" src='../../images/appointment.png' mode="aspectFit"/>
-                        <text class="btn-description">我的预约</text>
+                        <text class="btn-description">我的收藏</text>
                     </view>
                     <view class="btn-row" bindtap="My_coupon">
                         <image class="btn-image" src='../../images/coupon.png' mode="aspectFit"/>

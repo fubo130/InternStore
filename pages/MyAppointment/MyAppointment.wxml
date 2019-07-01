@@ -1,2 +1,55 @@
+<scroll-view class="Cart_bg" scroll-y="true">
+    <view class="Cart_area">
+        <block wx:if="{{orderItems.length > 0}}">
+            <block wx:for="{{orderItems}}" wx:key="" >
+                <view class="Cart_Item" id = "{{index}}">
+                    <view class="Item_left"  bindtap="gotoItem">
+                        <text class="selected">{{index+1}}</text>
+                        <image class="Item_image" src="{{item.Item_Img}}"/>
+                    </view>
+                    <view class="Item_right"  bindtap="gotoItem">
+                        <view class="Desc">
+                            <text class ="itemNm">{{item.Item_Name}}</text>
+                            <text class ="itemDs">{{item.Item_Desc}}</text>
+                            
+                        </view>
+                        <view class="Bottom-area"  bindtap="gotoItem">
+                            <text class="Price">¥{{itemPrice[index]}}</text>
+                            <view class="num">已降价¥1800.00</view>
+                        </view>
+                        <!-- <view class="Bottom-area"  bindtap="gotoItem">
+                            实付金额:<text class="Price">¥{{itemPrice[index]}}</text>
 
-<text>pages/Cart/Cart.wxml</text>
+                            <view class="num">
+                                <block wx:if="{{itemStatus[index]=='1'}}">
+                                    订单处理中
+              
+                                </block>
+
+                                <block wx:if="{{itemStatus[index]=='2'}}">
+                                 快递运送中
+                                </block>
+
+                                <block wx:if="{{itemStatus[index]=='3'}}">
+                                                        已签收
+                                </block>
+                            </view>
+                        </view> -->
+                    </view>
+                    <image class = "close" src = "../../images/close.png" bindtap="delateItem" mode = "widthFill" id = "{{index}}"></image>
+                </view>
+                
+            </block>
+        </block>
+
+        <block wx:else="{{}}">
+            <view class="Empty">
+                <image class="EmptyBg" src="../../images/EmptyCart.png" >
+                </image>
+                <text class="EmptyTitle">
+                    您还未购买过任何商品。
+                </text>
+            </view>
+        </block>
+    </view>
+</scroll-view>

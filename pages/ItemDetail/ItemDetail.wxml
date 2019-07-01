@@ -25,7 +25,7 @@
         <view class="coupon-img">
             <image src="../../images/dtcoupon.png" mode="widthFix" style="width: 100%"/>
         </view>
-        <view class = "coupon-detail">
+        <view class = "coupon-detail" bindtap="toCoupon">
             没有可用的优惠券呢，去领券中心瞧瞧吧！
             <image src="../../images/arrow.png"  class="arrow"/>
         </view>

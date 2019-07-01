@@ -2,18 +2,19 @@
     <view class="Cart_area">
         <block wx:if="{{orderItems.length > 0}}">
             <block wx:for="{{orderItems}}" wx:key="" >
-                <view class="Cart_Item" id = "{{index}}" bindtap="gotoItem">
-                    <view class="Item_left">
+                <view class="Cart_Item" id = "{{index}}">
+                    <view class="Item_left"  bindtap="gotoItem">
                         <text class="selected">{{index+1}}</text>
                         <image class="Item_image" src="{{item.Item_Img}}"/>
                     </view>
-                    <view class="Item_right">
+                    <view class="Item_right"  bindtap="gotoItem">
                         <view class="Desc">
                             <text class ="itemNm">{{item.Item_Name}}</text>
                             <text class ="itemDs">{{item.Item_Desc}}</text>
+                            
                         </view>
-                        <view class="Bottom-area">
-                            实付金额:<text class="Price">¥{{itemPrice[index]}}</text>
+                        <view class="Bottom-area"  bindtap="gotoItem">
+                            <text class="Price">¥{{itemPrice[index]}}</text>
 
                             <view class="num">
                                 <block wx:if="{{itemStatus[index]=='1'}}">
@@ -31,7 +32,9 @@
                             </view>
                         </view>
                     </view>
+                    <image class = "close" src = "../../images/close.png" bindtap="delateItem" mode = "widthFill" id = "{{index}}"></image>
                 </view>
+                
             </block>
         </block>
 
