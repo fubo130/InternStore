@@ -41,7 +41,7 @@
         <view class="subTt">
             <text class="Sub-text">合计:<text style="color:rgb(255,44,44)"> ¥{{SubTotal}}</text></text>
         </view>
-        <view class="checkout-btn">
+        <view class="checkout-btn" bindtap="goCheckOut">
             <text style="margin: auto auto">结算({{SNum}})</text>
         </view>
     </view>

@@ -1,0 +1,47 @@
+<view class="bkg">
+    <view class="Address">
+        <!-- 未填地址 -->
+        <block wx:if="{{Address.length == 0}}">
+            <view class="Form">
+                尚未填写收件信息，请填写后再购买
+            </view>
+        </block>
+        <!-- 已填地址 -->
+        <block wx:else="{{}}">
+            <view class="Str">
+
+            </view>
+
+            <view class="{{Name}}">
+
+            </view>
+
+            <view class="{{Phone}}">
+
+            </view>
+        </block>
+        <view>
+            <image src="../../images/arrow.png"  class="arrow"/>
+        </view>
+    </view>
+
+    <view class="PayMethod">
+
+    </view>
+
+    <view class="Item">
+
+    </view>
+
+    <view class="Coupon">
+
+    </view>
+
+    <view class="Delivery">
+
+    </view>
+
+    <view class="btn-area">
+    
+    </view>
+</view>

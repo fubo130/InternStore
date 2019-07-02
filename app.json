@@ -14,7 +14,8 @@
         "pages/ItemDetail/ItemDetail",
         "pages/Search/Search",
         "pages/Act/Act",
-        "pages/Coupon/Coupon"
+        "pages/Coupon/Coupon",
+        "pages/CheckOut/CheckOut"
     ],
     "window": {
         "backgroundTextStyle": "light",

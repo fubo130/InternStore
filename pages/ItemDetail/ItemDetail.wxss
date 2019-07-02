@@ -136,6 +136,22 @@
     align-content: center;
 }
 
+.btn-area .btn3-navl {
+    width: 64%;
+    height: 100%-20rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    /* margin-left: 1%; */
+    background-color: gainsboro;
+    border-radius: 20rpx;
+    /* border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn1 .btn-1 {
     width: 67rpx;
     display: flex;
@@ -198,6 +214,9 @@
     height: 30rpx;
     overflow: hidden;
     margin: auto auto;
+    position: relative;
+    margin-right: 30rpx;
+    margin-left: auto;
 }
 
 .bkg .description {

@@ -51,7 +51,7 @@
                 门店
             </view>
         </view>
-        <view class="act-item">
+        <view class="act-item" bindtap="toCoupon">
             <view class="act-itemImg">
                 <image src="../../images/dis.png" mode="widthFix" style="width: 100%"></image>
             </view>
@@ -63,6 +63,7 @@
     <view class ="all-item">
         <block wx:for="{{list}}"  wx:key="id">
             <view  class="dtl-item" bindtap="clickR1" id="{{item.id}}">
+                <view class="num">爆款推荐</view>
                 <image src="{{item.Item_Img}}" mode="aspectFit" class="item-image"><text class="dtl-nm">{{item.Item_Name}}</text></image>
             </view>
         </block>

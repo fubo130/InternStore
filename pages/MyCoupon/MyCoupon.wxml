@@ -1,7 +1,7 @@
 <scroll-view class="Coupon-background" scroll-y="true">
-    <block wx:if="{{UserCoupons.length!=0 && UserCoupons.indexOf(0)==-1}}">
+    <block wx:if="{{Coupons.length!=0 }}">
         <block wx:for="{{Coupons}}" wx:key="">
-            <view wx:if="{{UserCoupons.indexOf(item.id)==-1}}" class="coupon" bindtap="addCoupon" id = "{{index}}">
+            <view class="coupon" bindtap="addCoupon" id = "{{index}}" bindtap="toCategory">
                 <view class="coupon-left">
                     <view class="left-content">
                         <view class="left-top">

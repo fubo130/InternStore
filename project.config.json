@@ -24,7 +24,7 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.2",
+	"libVersion": "2.7.3",
 	"appid": "wx4d3ef35070a63ac6",
 	"projectname": "store",
 	"debugOptions": {

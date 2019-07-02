@@ -18,10 +18,11 @@ Page({
         wx.showLoading({
             title: '请等待......',
         })
-
-
+    
+        console.log("op: ",options)
 
         var that = this;
+        
         let uInfo = wx.getStorageSync("userInfo");
         let d = JSON.parse(uInfo);
         var l;
@@ -43,6 +44,10 @@ Page({
 
         this.setData({
             lSelect: 1
+        })
+        console.log("tabopt: ",parseInt(getApp().globalData.tabOpt))
+        this.setData({
+            lSelect: parseInt(getApp().globalData.tabOpt)
         })
         wx.request({
             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", ">", "0"]]&return_sql=true&page=1&perpage=100',
@@ -123,36 +128,43 @@ Page({
         this.setData({
             lSelect: 1
         })
+        getApp().globalData.tabOpt = 1
     },
     clickL2: function () {
         this.setData({
             lSelect: 2
         })
+        getApp().globalData.tabOpt = 2
     },
     clickL3: function () {
         this.setData({
             lSelect: 3
         })
+        getApp().globalData.tabOpt = 3
     },
     clickL4: function () {
         this.setData({
             lSelect: 4
         })
+        getApp().globalData.tabOpt = 4
     },
     clickL5: function () {
         this.setData({
             lSelect: 5
         })
+        getApp().globalData.tabOpt = 5
     },
     clickL6: function () {
         this.setData({
             lSelect: 6
         })
+        getApp().globalData.tabOpt = 6
     },
     clickL7: function () {
         this.setData({
             lSelect: 7
         })
+        getApp().globalData.tabOpt = 7
     },
     clickR1: function(res) {
         //通过id关联物品

@@ -25,10 +25,18 @@
         <view class="coupon-img">
             <image src="../../images/dtcoupon.png" mode="widthFix" style="width: 100%"/>
         </view>
-        <view class = "coupon-detail" bindtap="toCoupon">
-            没有可用的优惠券呢，去领券中心瞧瞧吧！
-            <image src="../../images/arrow.png"  class="arrow"/>
-        </view>
+        <block wx:if="{{availCoupon.length!=0}}">
+            <view class = "coupon-detail" bindtap="toMyCoupon">
+                您有优惠券可以使用！
+                <image src="../../images/arrow.png"  class="arrow"/>
+            </view>
+        </block>
+        <block wx:else="{{}}">
+            <view class = "coupon-detail" bindtap="toCoupon">
+                没有可用的优惠券呢，去领券中心瞧瞧吧！
+                <image src="../../images/arrow.png"  class="arrow"/>
+            </view>
+        </block>
     </view>
 
     
@@ -103,7 +111,7 @@
                         
                         </view>
                         <view class="comment-text" scroll-y="true">
-                            <text class="width: 100% height: 100%">618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的</text>
+                            <!-- <text class="width: 100% height: 100%">618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的618抢的，价格很实惠，相对同配置的电脑来说，除了神船就是这个性价比最高了。20号到的货，速度还可以。开了机看下，颜值在线。很喜欢，第一台是几年前买的ThinkPad，现在又7000p了，可以的</text> -->
                         </view>
                         <view class="comment-pic">
                             <view class="comment-img"></view>
@@ -129,11 +137,22 @@
                 收藏
             </view>
         </view>
-        <view class="btn3" bindtap='btnCart' bindtap="addToCart">
-            <text class="btn-text" >加入购物车</text>
-        </view>
-        <view class="btn2">
-            <text class="btn-text">立即购买</text>
-        </view>
+        <block wx:if="{{Available==true}}">
+            <view class="btn3" bindtap='btnCart' bindtap="addToCart">
+                <text class="btn-text" >加入购物车</text>
+            </view>
+            <view class="btn2" bindtap='checkOut'>
+                <text class="btn-text">立即购买</text>
+            </view>
+        </block>
+
+        <block wx:else="{{}}">
+            <view class="btn3-navl">
+                <text class="btn-text" bindtap="notAvailable">该物品暂时无货</text>
+            </view>
+            <!-- <view class="btn2-navl">
+                <text class="btn-text">立即购买</text>
+            </view> -->
+        </block>
     </view>
 </scroll-view>

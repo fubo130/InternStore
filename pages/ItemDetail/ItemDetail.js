@@ -14,6 +14,9 @@ Page({
         DescDetail: "",
         like_btn: "../../images/like1.png",
         DesSelect: 1,
+        cptype: 0,
+        availCoupon: [],
+        Available: false
     },
 
     onLoad: function (options) {
@@ -25,7 +28,17 @@ Page({
         })
 
         wx.request({
-            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=User_Appointment',
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id","=","' + options.ItemID + '"]]&fields=Coupon_Type',
+            success(res) {
+                console.log("cptype: ",res)
+                that.setData({
+                    cptype: res.data.data.data.Coupon_Type
+                })
+            }
+        })
+
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=User_Appointment,Coupon',
             success(res) {
                 console.log(res);
                 var tmp = res.data.data.data.User_Appointment.split(',');
@@ -38,9 +51,34 @@ Page({
 
                 else {
                     that.setData({
-                        like_btn: "../../images/like0.png"
+                        like_btn: "../../images/like0.png",
                     })
                 }
+                
+                var cp = res.data.data.data.Coupon.split(',')
+                var cplst = [];
+                var avl = [];
+                wx.request({
+                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Coupons&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "IN", [' + cp + ']]]&return_sql=true',
+                    success(res) {
+                        console.log("res: ",res.data.data.list);
+                        cplst = res.data.data.list;
+                    },
+                    complete() {
+                        // console.log("tabOpt: ", getApp().globalData.tabOpt)
+                        // console.log("usage: ", parseInt(cplst[0].Coupon_Usage))
+                        for (var i = 0; i < cplst.length; i++) {
+                            if (cplst[i].Coupon_Usage == that.data.cptype) {
+                                avl.push(cplst[i]);
+                            }
+                        }
+                        // console.log("Coupons: ",that.data.availCoupon)
+                        that.setData({
+                            availCoupon: avl
+                        })
+                        console.log(avl);
+                    }
+                })
             },
             fail() {},
             complete(){}
@@ -81,6 +119,16 @@ Page({
                 })
                 that.setData({
                     ShowPrice: that.data.ItemPrice.replace(",", "~")
+                })
+                var a;
+                if (that.data.ShowPrice=="0") {
+                    a = false;
+                }
+                else {
+                    a = true;
+                }
+                that.setData({
+                    Available: a
                 })
                  var i = 0;
                  var tmp = [];
@@ -266,5 +314,35 @@ Page({
         wx.navigateTo({
             url: '../Coupon/Coupon',
         })
+    },
+    toMyCoupon:function() {
+        wx.navigateTo({
+            url: '../MyCoupon/MyCoupon',
+        })
+    },
+    checkOut:function(res) {
+        wx.showLoading({
+            title: '请稍后......',
+        })
+        var lst = [];
+        lst.push(this.data.ItemID);
+        console.log(this.data.ShowPrice);
+        if(this.data.ShowPrice!="0") {
+            console.log(lst);
+            wx.navigateTo({
+                url: '../CheckOut/CheckOut?itemlst='+lst + '',
+                success: function(res) {},
+                fail: function(res) {},
+                complete: function(res) {
+                    wx.hideLoading();
+                },
+            })
+        }
+        else {
+            wx.showToast({
+                title: '该物品无货',
+                icon: "none"
+            })
+        }
     }
 })

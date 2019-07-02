@@ -50,7 +50,7 @@ Page({
             complete() {
 
                 wx.request({
-                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Coupons&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "NIN", [' + that.data.UserCoupons + ']]]&return_sql=true',
+                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Coupons&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "IN", [' + that.data.UserCoupons + ']]]&return_sql=true',
                     success(e) {
                         console.log(e);
                         that.setData({
@@ -135,7 +135,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        // this.onLoad();
     },
 
     /**
@@ -221,27 +221,17 @@ Page({
         //     })
         // }
     },
-    addCoupon: function (res) {
-        console.log(res.currentTarget.id)
-        var newTem = [];
-        for (var i = 0; i < this.data.UserCoupons.length; i++) {
-            newTem.push(this.data.UserCoupons[i]);
-        }
-        newTem.push(this.data.Coupons[res.currentTarget.id].id);
+    toCategory:function(res) {
+        console.log(res.currentTarget.id);
         var that = this;
-        wx.request({
-            url: 'https://hb9.api.yesapi.cn/?s=App.Table.Update&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&id=' + that.data.UID + '&data={"Coupon":"' + newTem + '"}',
+        var x = that.data.Coupons[res.currentTarget.id];
+        console.log("x", x.Coupon_Usage)
+        wx.switchTab({
+            url: '../Department/Department',
             success(res) {
-                console.log(res);
-            },
-            fail() { },
-            complete() {
-                wx.showToast({
-                    title: '成功领券',
-                    duration: 1500
-                })
-                that.onLoad();
+                getApp().globalData.tabOpt = parseInt(x.id);
             }
         })
+        console.log("usage: ", getApp().globalData.tabOpt)
     }
 })

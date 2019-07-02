@@ -17,7 +17,8 @@ Page({
          */
         Price: [],
         Amount: [],
-        SNum: 0
+        SNum: 0,
+        LST: []
     },
 
     /**
@@ -126,6 +127,10 @@ Page({
             complete() {
                 wx.hideLoading();
             }
+        })
+        var x = [];
+        this.setData({
+            LST: x
         })
     },
 
@@ -258,20 +263,38 @@ Page({
                 }
             })  
         }
-
+        if (that.data.Selected[res.currentTarget.id] == "../../images/cartSelect1.png") {
+            var x = this.data.LST;
+            console.log("dec before: ",x)
+            x.splice(x.indexOf(res.currentTarget.id), 1);
+            console.log("dec after: ", x)
+            that.setData({
+                LST: x
+            })
+        }
+        
+        
     },
 
     inc: function(res) {
         console.log(res.currentTarget.id);
+        var lm = this.data.LST;
         if (this.data.Amount[res.currentTarget.id] >= 9) {
             wx.showToast({
                 title: '已达最大限购数',
                 image: '../../images/dislike.png'
             })
         }
-
+        
         else {
             
+            if (this.data.Selected[res.currentTarget.id] == "../../images/cartSelect1.png") {
+                
+                console.log("inc before: ", lm)
+                lm.push(this.data.CartItem[res.currentTarget.id].id);
+                console.log("inc after: ", lm)
+            }
+
             var tmp = this.data.Amount;
             tmp[res.currentTarget.id] = parseInt(tmp[res.currentTarget.id]) + 1;
             var x = this.data.SubTotal;
@@ -291,6 +314,7 @@ Page({
                         
                     })
                     if (that.data.Selected[res.currentTarget.id] == "../../images/cartSelect1.png") {
+                        
                         that.setData({
                             SubTotal: x
                         })
@@ -298,6 +322,9 @@ Page({
                 }
             })
         }
+        that.setData({
+            LST: lm
+        })
     },
 
     toItem: function(res) {
@@ -352,18 +379,40 @@ Page({
         var i = parseInt(this.data.Price[res.currentTarget.id])*parseInt(this.data.Amount[res.currentTarget.id]);
         console.log(i)
         var l = this.data.SNum;
-
+        var x;
         if (tmp[res.currentTarget.id] == "../../images/cartSelect0.png") {
+            x = this.data.LST;
+            console.log("id: ", this.data.CartItem[res.currentTarget.id].id)
+            if (this.data.Price[res.currentTarget.id]!=0) {
+                for (var j = 0; j < this.data.Amount[res.currentTarget.id]; j++) {
+                    x.push(this.data.CartItem[res.currentTarget.id].id)
+                }
+            }
+            
             tmp[res.currentTarget.id] = "../../images/cartSelect1.png";
             p = p + i;
             l = l + 1;
         }
 
         else {
+            x = this.data.LST;
+            console.log("id: ", this.data.CartItem[res.currentTarget.id].id)
+            if (this.data.Price[res.currentTarget.id] != 0) {
+                console.log("before: ", x)
+                for (var j = 0; j < this.data.Amount[res.currentTarget.id]; j++) {
+                    x.splice(x.indexOf(res.currentTarget.id), 1)
+                }
+                
+                console.log("after: ", x)
+            }
             tmp[res.currentTarget.id] = "../../images/cartSelect0.png";
             p = p - i;
             l = l - 1;
         }
+
+        this.setData({
+            LST: x
+        })
         
         if (l == this.data.CartItemID.length) {
             this.setData({
@@ -393,9 +442,15 @@ Page({
         var slted = this.data.Selected;
         var tt = this.data.SubTotal;
         if (this.data.SNum != this.data.CartItemID.length) {
+            var x = this.data.LST;
             console.log("未全选！");
             for (var i = 0; i < this.data.CartItemID.length; i++) {
                 if (slted[i] == "../../images/cartSelect0.png") {
+                    if (this.data.Price[i] != 0) {
+                        for (var j = 0; j < this.data.Amount[i]; j++) {
+                            x.push(this.data.CartItem[i].id)
+                        }
+                    }
                     slted[i] = "../../images/cartSelect1.png";
                     tt = tt + parseInt(this.data.Price[i])*this.data.Amount[i];
                     num = num + 1;
@@ -410,18 +465,32 @@ Page({
             console.log("已全选！");
             num = 0;
             tt = 0;
+            var x = [];
             for (var i = 0; i < this.data.CartItemID.length; i++) {
                 slted[i] = "../../images/cartSelect0.png";
             }
             this.setData({
-                OnSelect: "../../images/cartSelect0.png"
+                OnSelect: "../../images/cartSelect0.png",
+                LST: x
             })
+            
         }
-
+        console.log("LST: ", this.data.LST)
         this.setData({
             SNum: num,
             Selected: slted,
             SubTotal: tt
         })
-    } 
+    },
+    goCheckOut:function() {
+        wx.showLoading({
+            title: '请等待......',
+        })
+        wx.navigateTo({
+            url: '../CheckOut/CheckOut?itemlst='+this.data.LST+',',
+            complete(){
+                wx.hideLoading();
+            }
+        })
+    }
 })

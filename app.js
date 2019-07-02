@@ -38,7 +38,8 @@ App({
     userInfo: null,
       okatapiHost: "https://hb9.api.yesapi.cn",
       okayApiAppKey: "74928B74E87AC199A83A17EEDB749F0A",
-      okayApiAppSecret: "tIxRx7MxdgUyVYO6JmySGot471tLE1K660uebIIDcXRwv3zUDihJHuw1yrSzoZT3WfofR2F6K"
+      okayApiAppSecret: "tIxRx7MxdgUyVYO6JmySGot471tLE1K660uebIIDcXRwv3zUDihJHuw1yrSzoZT3WfofR2F6K",
+      tabOpt: 1
   }
 
   

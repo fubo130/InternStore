@@ -211,5 +211,11 @@ Page({
                 wx.hideLoading();
             }
         })
+    },
+    toCoupon:function(res) {
+        console.log(res)
+        wx.navigateTo({
+            url: '../Coupon/Coupon',
+        })
     }
 })
