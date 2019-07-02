@@ -51,18 +51,53 @@ Page({
         console.log("cuntLst: ", cuntLst);
         console.log(countedItems);
         this.setData({
-            checkOutItems: countedItems
+            ItemID: idLst,
+            ItemAmount: cuntLst
         })
-        var count = 0;
-        var IDList = [];
-        // var ItemAMT = JSON.stringify(this.data.checkOutItems);
+        var that = this;
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "IN", [' + that.data.ItemID + ']]]&return_sql=true',
+            success(res) {
+                console.log("res: ", res.data.data.list);
+                that.setData({
+                    ItemDetail: res.data.data.list,
+                })
+                console.log(that.data.ItemDetail[0].Price)
+                var pc = [];
+                for (var i = 0; i < that.data.ItemDetail.length; i++) {
+                    var tmp = that.data.ItemDetail[i].Price.split(',');
+                    pc.push(tmp[0]);
+                }
+                that.setData({
+                    ItemPrice: pc
+                })
+            },
+            complete() {
+                console.log("ItemID: ", that.data.ItemID);
+                console.log("ItemDetail: ", that.data.ItemDetail);
+                console.log("ItemPrice: ", that.data.ItemPrice);
+                var st = 0;
+                for (var i = 0; i < that.data.ItemDetail.length; i++) {
+                    st += parseInt(that.data.ItemAmount[i]) * parseInt(that.data.ItemPrice[i])
+                }
+                console.log("subtotal: ",st)
+                that.setData({
+                    Subtotal: st
+                })
 
-        for (var it in this.data.checkOutItems) {
-            count += 1;
-            IDList.push(it);
-        }
-        console.log(IDList);
-        console.log(this.data.checkOutItems.id);
+                let uInfo = wx.getStorageSync("userInfo");
+                let data = JSON.parse(uInfo);
+                wx.request({
+                    url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + data.BindOpenID + '"]]&fields=Address',
+                    success(s) {
+                        console.log(s);
+                        that.setData({
+                            UserAddress: s.data.data.data.Address
+                        })
+                    }
+                })
+            }
+        })
         
     },
 

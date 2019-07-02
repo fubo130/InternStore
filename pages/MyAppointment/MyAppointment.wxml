@@ -2,7 +2,7 @@
     <view class="Cart_area">
         <block wx:if="{{orderItems.length > 0}}">
             <block wx:for="{{orderItems}}" wx:key="" >
-                <view class="Cart_Item" id = "{{index}}">
+                <view class="Cart_Item" id = "{{index}}" bindtap="toItem">
                     <view class="Item_left"  bindtap="gotoItem">
                         <text class="selected">{{index+1}}</text>
                         <image class="Item_image" src="{{item.Item_Img}}"/>
