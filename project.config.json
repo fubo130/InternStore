@@ -51,7 +51,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -141,6 +141,13 @@
 					"id": -1,
 					"name": "我的优惠券",
 					"pathName": "pages/MyCoupon/MyCoupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动页",
+					"pathName": "pages/Act/Act",
 					"query": "",
 					"scene": null
 				}
