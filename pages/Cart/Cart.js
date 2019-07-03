@@ -94,6 +94,35 @@ Page({
                     var lst = [];
                     var tp =[];
                     // var a = [];
+                    console.log("Amount: ",that.data.Amount);
+                    console.log("CartItemID: ", that.data.CartItemID);
+                    
+                    var lm = [];
+                    wx.request({
+                        url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "IN", [' + that.data.CartItemID + ']]]&return_sql=true',
+                        success(res) {
+                            console.log(res);
+                            var tp = [];
+                            for (var i = 0; i < that.data.CartItemID.length; i++) {
+                                for (var j = 0; j < that.data.CartItemID.length; j++) {
+                                    if (that.data.CartItemID[i]==res.data.data.list[j].id) {
+                                        lm.push(res.data.data.list[j]);
+                                        var nm = res.data.data.list[j].Price.split(",");
+                                        tp.push(nm[0])
+                                    }
+                                }
+                            }
+
+                            console.log("lm: ", lm);
+                            console.log("tp: ", tp);
+                            that.setData({
+                                CartItem: lm,
+                                Price: tp,
+                            })
+                        }
+                    })
+
+                    /*
                     for (var i = 0; i < that.data.CartItemID.length; i++) {
                         wx.request({
                             url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "=", "' + that.data.CartItemID[i] + '"]]&return_sql=true&page=1&perpage=100',
@@ -113,13 +142,13 @@ Page({
                                     Price: tp,
                                     // Amount: a
                                 })
-                                console.log("CartItem: " + that.data.CartItem[0].Item_Img)
-                                console.log("Price: " + that.data.Price)
-                                console.log("Amount: " + that.data.Amount)
+                                console.log("CartItem: ",that.data.CartItem)
+                                console.log("Price: ",that.data.Price)
+                                console.log("Amount: ",that.data.Amount)
                             }
                         })
                         
-                    }
+                    }*/
                     
                 }
             },
@@ -486,11 +515,20 @@ Page({
         wx.showLoading({
             title: '请等待......',
         })
-        wx.navigateTo({
-            url: '../CheckOut/CheckOut?itemlst='+this.data.LST+',',
-            complete(){
-                wx.hideLoading();
-            }
-        })
+        if (this.data.LST.length != 0) {
+            wx.navigateTo({
+                url: '../CheckOut/CheckOut?itemlst=' + this.data.LST + ',',
+                complete() {
+                    wx.hideLoading();
+                }
+            })
+        }
+        else {
+            wx.showToast({
+                title: '未选中任何商品',
+                icon: 'none',
+                duration: 2000
+            })
+        }
     }
 })

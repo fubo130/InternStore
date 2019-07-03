@@ -141,9 +141,9 @@ Page({
                     if (res.data && res.data.err_code == 0) {
                         // TODO：请求成功
                         console.log('ok: ', res.data)
-                        wx.switchTab({
-                            url: '../User/User',
-                        })
+                        // wx.switchTab({
+                        //     url: '../User/User',
+                        // })
                         wx.showToast({
                             title: '信息添加成功',
                             icon: 'none',

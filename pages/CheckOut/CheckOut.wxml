@@ -1,47 +1,195 @@
-<view class="bkg">
-    <view class="Address">
-        <!-- 未填地址 -->
-        <block wx:if="{{Address.length == 0}}">
-            <view class="Form">
-                尚未填写收件信息，请填写后再购买
-            </view>
-        </block>
-        <!-- 已填地址 -->
-        <block wx:else="{{}}">
-            <view class="Str">
+<scroll-view class="bkg" scroll-y="true">
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{onEdit}}"></view> 
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{onEdit}}">
+        <view class="drawer_title">我的优惠券</view> 
+            <form bindsubmit="formSubmit" bindreset="formReset">
+                <view class="drawer_content"> 
+                  <scroll-view class="Coupon-background" scroll-y="true">
+                    <block wx:if="{{CouponAvl.length!=0 }}">
+                        <block wx:for="{{CouponAvl}}" wx:key="">
+                            <view class="coupon" bindtap="addCoupon" id = "{{index}}" bindtap="forSelect">
+                                <view class="coupon-left">
+                                    <view class="left-content">
+                                        <view class="left-top">
+                                            ¥ {{CouponValue[index]}}
+                                        </view>
+                                        <view class="left-bottom">
+                                            满{{CouponPrice[index]}}元可用
+                                            <text class="text">点击使用</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="coupon-right">
+                                    <view class="right-content">
+                                        <view class="right-top">
+                                            {{item.Coupon_Detail}}
+                                        </view>
+                                        <view class="right-bottom">
+                                            {{TimeS[index]}} ~ {{TimeE[index]}}
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                    <block wx:else="{{}}">
+                        <view class="Empty">
+                            <image class="EmptyBg" src="../../images/EmptyCoupon.png" ></image>
+                            <text class="EmptyTitle">
+                                暂无优惠券，去领券中心看一看吧。
+                            </text>
+                        </view>
+                    </block>
+                </scroll-view>
+                </view> 
+                <!-- <button class="btn_ok" form-type="submit">更新</button>  -->
+                <view class="btn_cancel" bindtap="powerDrawer" data-statu="close">关闭</view> 
+        </form>
+    </view>
 
-            </view>
+    <view wx:if="{{onEdit==false}}">
+        <view class="Address" bindtap="toEdit">
+            <!-- 未填地址 -->
+            <block wx:if="{{UserAddress.length == 0}}">
+                <view class="Form">
+                    尚未填写收件信息，请填写后再购买
+                </view>
+            </block>
+            <!-- 已填地址 -->
+            <block wx:else="{{}}">
+                <view class = "info">
+                    <view class="leftTitle">
+                        联系方式:
+                    </view>
+                    <view class="Name">
+                        <text class="f">收件人：</text>
+                        <text class="field">{{Name}}</text>
+                    </view>
 
-            <view class="{{Name}}">
+                    <view class="Str">
+                        <text class="f">邮寄地址：</text>
+                        <text class="field">{{UserAddress}}</text>
+                    </view>
 
-            </view>
-
-            <view class="{{Phone}}">
-
-            </view>
-        </block>
-        <view>
+                    <view class="Phone">
+                        <text class="f">联系电话：</text>
+                        <text class="field">{{Phone}}</text>
+                    </view>
+                </view>
+            </block>
             <image src="../../images/arrow.png"  class="arrow"/>
         </view>
+
+        <view class="Item">
+            <view class="itemTitle">
+                购物清单
+            </view>
+
+            <view class="itemList">
+                <block wx:for="{{ItemDetail}}" wx:key="" >
+                    <view wx:if="{{item.Item_Img != ''&&item.Item_Img != undefined}}" class="Cart_Item" id = "{{item.id}}">
+                        <view class="Item_left">
+                            <image class="Item_image" src="{{item.Item_Img}}"/>
+                        </view>
+                        <view class="Item_right">
+                            <view class="Desc">
+                                <text class ="itemDs">{{item.Item_Desc}}</text>
+                                <view class="Dest">
+                                    <text class ="itemNm">¥{{ItemPrice[index]}}</text>
+                                    <text class ="itemAm">x {{ItemAmount[index]}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+
+        <view class="Coupon">
+            <view class="CouponTitle">
+                优惠中心
+            </view>
+            <view class="NotAvl"  bindtap="powerDrawer" data-statu="open">
+                <block wx:if="{{CouponAvl.length==0}}">
+                    
+                    <view class="coupon-img">
+                        <image src="../../images/dtcoupon.png" mode="widthFix" style="width: 100%"/>
+                    </view>
+                    <view class = "coupon-detail" bindtap="toCoupon">
+                        没有可用的优惠券呢，去领券中心瞧瞧吧！
+                        <image src="../../images/arrow.png"  class="arrow"/>
+                    </view>
+                </block>
+                <block wx:else="{{}}">
+
+                    <view class="coupon-img">
+                        <image src="../../images/dtcoupon.png" mode="widthFix" style="width: 100%"/>
+                    </view>
+                    <view class = "coupon-detail" >
+                        已选择满<text class="yl">¥{{Discount[1]}}</text>元 立减<text class="yl">¥{{Discount[0]}}</text>元优惠活动
+                        <image src="../../images/arrow.png"  class="arrow"/>
+                    </view>
+                </block>
+            </view>
+        </view>
+
+        <view class="Delivery">
+
+        </view>
+
+        <view class="Total">
+            <view class="TotalTop">
+                <view class="TotalTitle">
+                    定单金额
+                </view>
+                <view class="TotalPrice">
+                    ¥{{Subtotal}}
+                </view>
+            </view>
+            <view class="TotalDetail">
+                <view class="Total-Row">
+                    <text class="Row-left">
+                        运费
+                    </text>
+                    <text class="Row-right">
+                        + ¥0
+                    </text>
+                </view>
+                <block wx:if="{{CouponAvl.length!=0}}">
+                    <view class="Total-Row">
+                        <text class="Row-left">
+                            优惠金额
+                        </text>
+                        <text class="Row-right">
+                            - ¥{{Discount[0]}}
+                        </text>
+                    </view>
+                </block>
+                <block wx:else="{{}}">
+                    <view class="Total-Row">
+                        <text class="Row-left">
+                            优惠金额
+                        </text>
+                        <text class="Row-right">
+                            - ¥0
+                        </text>
+                    </view>
+                </block>
+
+
+                <view class="Total-Row">
+                    <text class="Row-left">
+                        实际付款
+                    </text>
+                    <text class="Row-right">
+                        ¥ {{AfterPrice}}
+                    </text>
+                </view>
+            </view>
+        </view>
+
+        <view class="btn-area">
+            微信支付
+        </view>
     </view>
-
-    <view class="PayMethod">
-
-    </view>
-
-    <view class="Item">
-
-    </view>
-
-    <view class="Coupon">
-
-    </view>
-
-    <view class="Delivery">
-
-    </view>
-
-    <view class="btn-area">
-    
-    </view>
-</view>
+</scroll-view>

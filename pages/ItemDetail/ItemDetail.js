@@ -67,11 +67,14 @@ Page({
                     complete() {
                         // console.log("tabOpt: ", getApp().globalData.tabOpt)
                         // console.log("usage: ", parseInt(cplst[0].Coupon_Usage))
-                        for (var i = 0; i < cplst.length; i++) {
-                            if (cplst[i].Coupon_Usage == that.data.cptype) {
-                                avl.push(cplst[i]);
+                        if (cplst != undefined) {
+                            for (var i = 0; i < cplst.length; i++) {
+                                if (cplst[i].Coupon_Usage == that.data.cptype) {
+                                    avl.push(cplst[i]);
+                                }
                             }
                         }
+                        
                         // console.log("Coupons: ",that.data.availCoupon)
                         that.setData({
                             availCoupon: avl
