@@ -181,7 +181,7 @@
                     <text class="Row-left">
                         实际付款
                     </text>
-                    <text class="Row-right">
+                    <text class="Row-rightX">
                         ¥ {{AfterPrice}}
                     </text>
                 </view>

@@ -13,7 +13,7 @@ Page({
         images: ['../../images/item.png', '../../images/item1.png', '../../images/item.png', '../../images/item1.png', '../../images/item.png', '../../images/item1.png', '../../images/item.png', '../../images/item1.png', '../../images/item.png'],
         btnconfirm: '../../images/dianjichoujiang.png',
         clickLuck: 'clickLuck',
-        luckPosition: 2,
+        luckPosition: 3,
     },
 
     onLoad: function () {

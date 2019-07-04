@@ -54,6 +54,7 @@ Page({
     },
 
     bindGetUserInfo: function (e) {
+        console.log(e);
         if (e.detail.userInfo) {
             //用户按了允许授权按钮
             var that = this;

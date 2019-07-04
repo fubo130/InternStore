@@ -48,10 +48,12 @@ Page({
             },
             fail() { },
             complete() {
-                wx.setTabBarBadge({
-                    index: 3,
-                    text: l.length + ''
-                })
+                if (l[0] != "") {
+                    wx.setTabBarBadge({
+                        index: 3,
+                        text: l.length + ''
+                    })
+                }
             }
         })
 
@@ -103,23 +105,26 @@ Page({
                         success(res) {
                             console.log(res);
                             var tp = [];
-                            for (var i = 0; i < that.data.CartItemID.length; i++) {
-                                for (var j = 0; j < that.data.CartItemID.length; j++) {
-                                    if (that.data.CartItemID[i]==res.data.data.list[j].id) {
-                                        lm.push(res.data.data.list[j]);
-                                        var nm = res.data.data.list[j].Price.split(",");
-                                        tp.push(nm[0])
+                            if (that.data.CartItemID[0] != "") {
+                                for (var i = 0; i < that.data.CartItemID.length; i++) {
+                                    for (var j = 0; j < that.data.CartItemID.length; j++) {
+                                        if (that.data.CartItemID[i] == res.data.data.list[j].id) {
+                                            lm.push(res.data.data.list[j]);
+                                            var nm = res.data.data.list[j].Price.split(",");
+                                            tp.push(nm[0])
+                                        }
                                     }
                                 }
-                            }
 
-                            console.log("lm: ", lm);
-                            console.log("tp: ", tp);
-                            that.setData({
-                                CartItem: lm,
-                                Price: tp,
-                            })
+                                console.log("lm: ", lm);
+                                console.log("tp: ", tp);
+                                that.setData({
+                                    CartItem: lm,
+                                    Price: tp,
+                                })
+                            }
                         }
+                            
                     })
 
                     /*

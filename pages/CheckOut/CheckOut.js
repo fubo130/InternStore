@@ -161,15 +161,27 @@ Page({
                                         }
                                     }
                                 }
-                                console.log("Current Select: ",curSlt)
-                                that.setData({
-                                    CouponAvl: t,
-                                    CouponSelect: curSlt,
-                                    Discount: curSlt.Coupon_Value.split(','),
-                                    AfterPrice: min,
-                                    CouponValue: v,
-                                    CouponPrice: p
-                                })
+                                console.log(curSlt)
+                                if (curSlt.Coupon_Value!=undefined) {
+                                    that.setData({
+                                        CouponAvl: t,
+                                        CouponSelect: curSlt,
+                                        Discount: curSlt.Coupon_Value.split(','),
+                                        AfterPrice: min,
+                                        CouponValue: v,
+                                        CouponPrice: p
+                                    })
+                                }
+                                else {
+                                    that.setData({
+                                        CouponAvl: t,
+                                        CouponSelect: curSlt,
+                                        AfterPrice: min,
+                                        CouponValue: v,
+                                        CouponPrice: p
+                                    })
+                                }
+                                
                             }
                         })
                     }

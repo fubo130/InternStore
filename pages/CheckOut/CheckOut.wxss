@@ -1,11 +1,12 @@
 .bkg {
     height: 100%;
     width: 100%;
-    border: 1rpx solid green;
-    background-color: white;
+    /* border: 1rpx solid green; */
+    background-color: rgba(221, 221, 221, 0.966);
 }
 
 .bkg .Address {
+    min-height: 200rpx;
     margin-top: 5rpx;
     margin-bottom: 20rpx;
     display: flex;
@@ -15,11 +16,15 @@
     margin-right: 1%; */
     height: 20%;
     justify-content: center;
-    /* align-items: center; */
-    border: 1rpx solid red;
+    align-items: center;
+    /* border: 1rpx solid red; */
     border-radius: 30rpx;
-    box-shadow: 5rpx 5rpx 30rpx rgba(0,0,0,.3);
-    background-color: rgba(243, 243, 243, 0.753);
+    /* box-shadow: 5rpx 5rpx 30rpx rgba(0,0,0,.3); */
+    background-color: white;
+}
+
+.Address .Form {
+    margin-left: 3%;
 }
 
 .Address .info {
@@ -84,9 +89,9 @@
     width: 100%;
     margin-bottom: 20rpx;
     display: flex;
-    border: 1rpx solid rebeccapurple;
+    /* border: 1rpx solid rebeccapurple; */
     border-radius: 30rpx;
-    background-color: rgba(243, 243, 243, 0.753);
+    background-color: white;
     flex-direction: column;
 }
 
@@ -111,12 +116,12 @@
     width: 93%;
     margin-left: 5%;
     margin-right: auto;
-    border: 1rpx solid red;
+    /* border: 1rpx solid red; */
     margin-top: 20rpx;
     margin-bottom: 8rpx;
     display: flex;
     flex-direction: row;
-    background-color: rgba(243, 243, 243, 0.753);
+    background-color: white;
     border-radius: 20rpx;
 }
 
@@ -198,9 +203,9 @@
     width: 100%;
     margin-bottom: 20rpx;
     display: flex;
-    border: 1rpx solid royalblue;
+    /* border: 1rpx solid royalblue; */
     border-radius: 30rpx;
-    background-color: rgba(243, 243, 243, 0.753);
+    background-color: white;
     flex-direction: column;
 }
 
@@ -257,11 +262,11 @@
     height: fit-content;
     width: 100%;
     display: flex;
-    border: 1rpx solid royalblue;
+    /* border: 1rpx solid royalblue; */
     border-radius: 30rpx;
-    background-color: rgba(243, 243, 243, 0.753);
+    background-color: white;
     flex-direction: column;
-    margin-bottom: 100rpx;
+    margin-bottom: 120rpx;
 }
 
 .Total .TotalTop {
@@ -326,6 +331,17 @@
     align-items: center;
     justify-content: center;
     color: rgb(255, 166, 0);
+}
+
+.Total-Row .Row-rightX {
+    height: fit-content;
+    margin-left: auto;
+    margin-right: 5rpx;
+    font-size: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: crimson;
 }
 
 .bkg .btn-area {

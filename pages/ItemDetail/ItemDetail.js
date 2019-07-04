@@ -254,6 +254,22 @@ Page({
         })
     },
     addToCart: function() {
+        try {
+            let uInfo = wx.getStorageSync("userInfo");
+            let data = JSON.parse(uInfo);
+        } catch(e) {
+            wx.showToast({
+                title: '请先登录......',
+                duration: 2500
+            })
+            wx.redirectTo({
+                url: '../Login/Login',
+                success: function(res) {},
+                fail: function(res) {},
+                complete: function(res) {},
+            })
+        }
+        
         console.log(this.data.ItemID);
         var idList = [];
         let uInfo = wx.getStorageSync("userInfo");

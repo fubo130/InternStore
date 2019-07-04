@@ -51,7 +51,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -149,6 +149,12 @@
 					"name": "活动页",
 					"pathName": "pages/Act/Act",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "砍价页",
+					"pathName": "pages/Bargain/Bargain",
 					"scene": null
 				}
 			]

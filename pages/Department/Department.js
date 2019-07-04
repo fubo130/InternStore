@@ -35,10 +35,12 @@ Page({
             },
             fail() { },
             complete() {
-                wx.setTabBarBadge({
-                    index: 3,
-                    text: l.length + ''
-                })
+                if (l[0] != "") {
+                    wx.setTabBarBadge({
+                        index: 3,
+                        text: l.length + ''
+                    })
+                }
             }
         })
 

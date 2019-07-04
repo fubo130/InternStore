@@ -35,7 +35,7 @@
     </view>
 
     <view class="act">
-        <view class="act-item">
+        <view class="act-item" bindtap="toBargain">
             <view class="act-itemImg">
                 <image src="../../images/discount.png" mode="widthFix" style="width: 100%"></image>
             </view>

@@ -47,7 +47,7 @@
                 <image class="EmptyBg" src="../../images/EmptyCart.png" >
                 </image>
                 <text class="EmptyTitle">
-                    您还未购买过任何商品。
+                    您还未收藏过任何商品。
                 </text>
             </view>
         </block>
