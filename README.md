@@ -1,5 +1,5 @@
-#我的微信商城小程序
-##1. 小程序介绍
+# 我的微信商城小程序  
+## 1. 小程序介绍
 
       'amszdk商城' 是根据学习联想商城，全程由个人开发出的微信商城小程序。  
     小程序包含一般商城的所有基本功能，如授权登录，商品浏览，商品分享，
@@ -16,7 +16,7 @@
       由于项目会在后期实时优化及改进，所以并未提交并上线小程序，目前仅为体验版
     仅有管理员及授权游客可以通过扫描二位码进行预览
 
-##2.小程序PC端的安装需求
+## 2.小程序PC端的安装需求
 
  - 2.1 微信开发者工具  
     - [开发工具链接](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)  
@@ -27,7 +27,7 @@
    
  相关内容可于微信官方文档中查询：[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7)
  
-##3.手机微信端预览
+## 3.手机微信端预览
 
  - 3.1 小程序二维码：  
     ![QRcode](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/QR.jpg) 
@@ -35,8 +35,8 @@
  - 3.2 小程序游客权限：
     - 游客权限需联系管理员进行添加才可预览体验版小程序
     
-##4. 项目目录
-|  readme.md  
+## 4. 项目目录  
+ |  readme.md  
 │  app.js  
 │  app.json  
 │  app.wxss  
@@ -242,7 +242,7 @@
             wxSearchView.wxml  
             wxSearchView.wxss  
             
-##5. 实际预览
+## 5. 实际预览
 
   - 5.1 Home页面
     ![HomePage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/home.PNG)  
