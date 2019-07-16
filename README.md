@@ -244,22 +244,22 @@
             
 ## 5. 实际预览
 
-  - 5.1 Home页面
+  - 5.1 Home页面  
     ![HomePage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/home.PNG)  
-  - 5.2 分类页面
+  - 5.2 分类页面  
     ![DepartmentPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/department.PNG)  
-  - 5.3 活动页面
-    ![ActPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/act.PNG) 
-  - 5.4 购物车页面
-    ![CartPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/cart.PNG) 
-  - 5.5 用户页面
-    ![CartPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/user.PNG) 
-  - 5.6 我的订单
-    ![LikePage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/order.PNG) 
-  - 5.7 商品详情
+  - 5.3 活动页面  
+    ![ActPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/act.PNG)  
+  - 5.4 购物车页面  
+    ![CartPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/cart.PNG)  
+  - 5.5 用户页面  
+    ![CartPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/user.PNG)  
+  - 5.6 我的订单  
+    ![LikePage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/order.PNG)  
+  - 5.7 商品详情  
     ![ItemDetailPage1](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/itemDetail.PNG)  
-    ![ItemDetailPage2](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/itemDetail2.PNG) 
-  - 5.8 结算页面
+    ![ItemDetailPage2](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/itemDetail2.PNG)  
+  - 5.8 结算页面  
     ![CheckOut1](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/checkout1.PNG)  
     ![CheckOut2](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/checkout2.PNG)  
 
