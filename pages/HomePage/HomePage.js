@@ -16,110 +16,110 @@ Page({
 
     onLoad(data) {
         var that = this;
-        try {
-            let uInfo = wx.getStorageSync("userInfo");
-            let d = JSON.parse(uInfo);
-            var l;
-            wx.request({
-                url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + d.BindOpenID + '"]]&fields=Cart',
-                success(res) {
-                    console.log(res);
-                    l = res.data.data.data.Cart.split(",");
-                    console.log(l);
-                },
-                fail() { },
-                complete() {
-                    console.log("l: ", l);
-                    if (l[0] != "") {
-                        wx.setTabBarBadge({
-                            index: 3,
-                            text: l.length + ''
-                        })
-                    }
-
+        let uInfo = wx.getStorageSync("userInfo");
+        let d = JSON.parse(uInfo);
+        var l;
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeFindOne&model_name=Store_Users&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["BindOpenID","=","' + d.BindOpenID + '"]]&fields=Cart',
+            success(res) {
+                console.log(res);
+                l = res.data.data.data.Cart.split(",");
+                console.log(l);
+            },
+            fail() { },
+            complete() {
+                console.log("l: ", l);
+                if (l[0] != "") {
+                    wx.setTabBarBadge({
+                        index: 3,
+                        text: l.length + ''
+                    })
                 }
-            })
+
+            }
+        })
 
 
 
-            wx.request({
-                url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", ">", "0"]]&return_sql=true&page=1&perpage=100',
-                success: function (res) {
-                    console.log(res);
-                    console.log(res.data.data.list.length)
-                    var i = 0;
-                    that.setData({
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", ">", "0"]]&return_sql=true&page=1&perpage=100',
+            success: function (res) {
+                console.log(res);
+                console.log(res.data.data.list.length)
+                var i = 0;
+                that.setData({
                         list: res.data.data.list
-                    })
-                    console.log(that.data.list);
+                })
+                console.log(that.data.list);
 
-                    var ln = [];
-                    var i = 0;
-                    for (i = 0; i < res.data.data.list.length; i++) {
-                        ln.push(res.data.data.list[i].Item_Name);
-                    }
-                    console.log(ln);
-                    that.setData({
-                        nm: ln
-                    })
+                var ln = [];
+                var i = 0;
+                for (i = 0; i < res.data.data.list.length; i++) {
+                    ln.push(res.data.data.list[i].Item_Name);
                 }
-            })
-
-            wx.showLoading({
-                title: '请稍后......',
-            })
-            if (data.isAuthorized != null && data.isAuthorized != undefined) {
-                this.setData({
-                    isAuthorized: data.isAuthorized
+                console.log(ln);
+                that.setData({
+                    nm: ln
                 })
             }
-            var db_length;
-            var that = this;
+        })
 
-            //获取首页滚动图片信息
-            wx.request({
-                url: 'https://hb9.api.yesapi.cn/?s=App.Table.Query&model_name=Recommendation_items&app_key=74928B74E87AC199A83A17EEDB749F0A&select=*&return_sql=true',
-                success: function (res) {
-                    console.log(res)
-
-                    let its = [];
-                    var i;
-                    for (i = 0; i < res.data.data.list.length; i++) {
-                        var obj = {
-                            itemData: res.data.data.list[i].ItemName,
-                            imageData: res.data.data.list[i].ItemImage,
-                            urlData: res.data.data.list[i].ItemURL,
-                            item: res.data.data.list[i].Description
-                        };
-                        console.log(obj);
-
-                        its.push(obj);
-                    }
-                    console.log(its)
-                    that.item = its;
-                    console.log(that.item);
-                    //that.setData({
-                    //   imgData: its
-                    //})
-                    //console.log(imgData);
-                },
-                complete() {
-                    wx.hideLoading();
-                }
-            })
-        } catch(e) {
-            wx.redirectTo({
-                url: '../Login/Login',
-                success: function(res) {},
-                fail: function(res) {},
-                complete: function(res) {},
+        wx.showLoading({
+            title: '请稍后......',
+        })
+        if (data.isAuthorized != null && data.isAuthorized != undefined) {
+            this.setData({
+                isAuthorized: data.isAuthorized
             })
         }
+        var db_length;
+        var that = this;
+
+            //获取首页滚动图片信息
+        wx.request({
+            url: 'https://hb9.api.yesapi.cn/?s=App.Table.Query&model_name=Recommendation_items&app_key=74928B74E87AC199A83A17EEDB749F0A&select=*&return_sql=true',
+            success: function (res) {
+                console.log(res)
+
+                let its = [];
+                var i;
+                for (i = 0; i < res.data.data.list.length; i++) {
+                    var obj = {
+                        itemData: res.data.data.list[i].ItemName,
+                        imageData: res.data.data.list[i].ItemImage,
+                        urlData: res.data.data.list[i].ItemURL,
+                        item: res.data.data.list[i].Description
+                    };
+                    console.log(obj);
+
+                    its.push(obj);
+                }
+                console.log(its)
+                that.item = its;
+                console.log(that.item);
+                //that.setData({
+                //   imgData: its
+                //})
+                //console.log(imgData);
+            },
+            complete() {
+                wx.hideLoading();
+            }
+        })
+    },
+        // } catch(e) {
+        //     wx.redirectTo({
+        //         url: '../Login/Login',
+        //         success: function(res) {},
+        //         fail: function(res) {},
+        //         complete: function(res) {},
+        //     })
+        //}
         
         // let uInfo = wx.getStorageSync("userInfo");
         // let d = JSON.parse(uInfo);
         
-    },
+    //},
     goSearch:function() {
         wx.showLoading({
             title: '请等待......',

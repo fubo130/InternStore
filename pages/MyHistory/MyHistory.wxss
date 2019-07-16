@@ -23,8 +23,9 @@
     color: gainsboro;
     font-weight: 600;
     /* border: 1rpx solid green; */
-    margin-left: 25%;
-    margin-right: 20%;
+    display: flex;
+    margin: 0 auto;
+    
 }
 
 .Cart_bg .Cart_Item {

@@ -60,7 +60,7 @@ Page({
                     url: 'https://hb9.api.yesapi.cn/?s=App.Table.FreeQuery&model_name=Store_Item&app_key=74928B74E87AC199A83A17EEDB749F0A&where=[["id", "IN", [' + that.data.itList + ']]]&return_sql=true',
                     success(res) {
                         console.log(res);
-                        if (res.data.data.msg == "") {
+                        if (res.data.data.err_msg == "") {
                             for (var i = 0; i < that.data.itList.length; i++) {
                                 console.log("id: ", res.data.data.list[i].id);
                                 console.log("glo: ", that.data.tmp.m[i]);

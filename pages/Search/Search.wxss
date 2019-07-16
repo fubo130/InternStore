@@ -21,8 +21,8 @@
 
 .SearchBar .search-btn {
     width: 10%;
-    margin-right: 2%;
-    margin-left: 30%;
+    margin-right: 3%;
+    margin-left: auto;
     height: 70rpx;
 }
 
