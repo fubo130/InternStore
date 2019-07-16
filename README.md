@@ -25,7 +25,7 @@
    - APPID: wx4d3ef35070a63ac6
    - 开发者账号: 可联系管理员添加相关权限
    
- 相关内容可于微信官方文档中查询：[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7)
+ 相关内容可于微信官方文档中查询：[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html)
  
 ## 3.手机微信端预览
 
