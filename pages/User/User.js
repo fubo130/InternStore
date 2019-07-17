@@ -26,9 +26,6 @@ Page({
             mask: true,
         })
 
-
-
-
         let that= this;
         let uInfo = wx.getStorageSync("userInfo");
         let data = JSON.parse(uInfo);

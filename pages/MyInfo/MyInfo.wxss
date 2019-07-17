@@ -1,5 +1,6 @@
 .Info-bg {
-    background-image: url("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4098526861,1800178504&fm=26&gp=0.jpg");
+    /* background-image: url("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4098526861,1800178504&fm=26&gp=0.jpg"); */
+    background-color: wheat;
     background-size: 100%;
     top: 0;
     bottom: 0;
@@ -19,9 +20,10 @@
     margin: 15rpx 20rpx;
     border-radius: 20rpx;
     height: 450rpx;
-    background-color: rgba(241, 16, 16, 0.87);
+    /* background-color: rgba(241, 16, 16, 0.87); */
     display: block;
-    background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561367158&di=85f6ec9f684e23657182a822399d798b&imgtype=jpg&er=1&src=http%3A%2F%2Fpic1a.nipic.com%2F2009-02-27%2F200922715316173_2.jpg");
+    background-image: linear-gradient( 135deg, #FFE985 10%, #FA742B 100%);
+    /* background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561367158&di=85f6ec9f684e23657182a822399d798b&imgtype=jpg&er=1&src=http%3A%2F%2Fpic1a.nipic.com%2F2009-02-27%2F200922715316173_2.jpg"); */
     background-size: 100%;
     overflow: hidden;
     border: solid 0.5rpx rgb(146, 91, 52);
@@ -32,12 +34,14 @@
     font-size: 45rpx;
     text-align: center;
     margin-top: 30rpx;
+    color: rgb(138, 138, 4);
 }
 
 .Quest {
     font-size: 35rpx;
     display: flex;
     flex-direction: row;
+    color: rgb(99, 99, 55);
 }
 
 .Quest-left {
@@ -62,6 +66,7 @@
     background-color: transparent;
     overflow: hidden;
     border-radius: 10rpx;
+    
 }
 
 .Quest-show {
@@ -78,11 +83,13 @@
 }
 
 .btn {
-    margin-top: 60%;
-    margin-bottom: 3%;
+    position: fixed;
+    /* top: auto; */
+    bottom: 3%;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(255, 196, 0, 0.685);
+    width: 90%;
+    background-image: linear-gradient( 135deg, #FFE985 10%, #FA742B 100%);
 }
 
 .drawer_screen { 

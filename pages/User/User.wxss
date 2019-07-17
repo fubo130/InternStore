@@ -33,6 +33,35 @@
     box-shadow:  6rpx 6rpx 14rpx rgba(0, 0, 0, 0.5);  
 }
 
+.func_area .btns {
+    width: 99%;
+    height: 100rpx;
+    /* margin-left: 1%;
+    margin-right: 1%; */
+    /* border: 1rpx solid red; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    border-bottom: 2rpx dashed rgb(56, 56, 56);
+}
+
+.btns .btn_img {
+    height: 95%;
+    width: 100rpx;
+    /* margin-left: 1%; */
+    /* border: 1rpx solid green; */
+}
+
+.btns .btn_name {
+    height: 100%;
+    width: fit-content;
+    margin-left: 13%;
+    /* border: 1rpx solid green; */
+    display: flex;
+    align-items: center;
+    /* color: white; */
+}
+
 .wave{
     position: absolute;
     top: -40rpx;
@@ -187,7 +216,7 @@
 
 .btn-image {
     height: auto;
-    width: 64rpx;
+    width: 20%;
 }
 
 .btn-row {

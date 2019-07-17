@@ -16,26 +16,26 @@
                     <text class="card-font">ID: {{userNickname}}</text>
                     <text class="card-font">积分: {{userExp}}</text>
 
-                    <view class="btn-row" bindtap="User_center">
-                        <image class="btn-image" src='../../images/user_detail.png' mode="aspectFit"/>
-                        <text class="btn-description">个人信息</text>
+                    <view class="btns" bindtap="User_center">
+                        <image class="btn_img" src='../../images/user_detail.png' mode="widthFill"/>
+                        <text class="btn_name">个人信息</text>
                     </view>
-                    <view class="btn-row" bindtap="My_order">
-                        <image class="btn-image" src='../../images/order.png' mode="aspectFit"/>
-                        <text class="btn-description">我的订单</text>
+                    <view class="btns" bindtap="My_order">
+                        <image class="btn_img" src='../../images/order.png' mode="widthFill"/>
+                        <text class="btn_name">我的订单</text>
                     </view>
-                    <view class="btn-row" bindtap="My_history">
-                        <image class="btn-image" src='../../images/ft.png' mode="aspectFit"/>
-                        <text class="btn-description">我的足迹</text>
+                    <view class="btns" bindtap="My_history">
+                        <image class="btn_img" src='../../images/ft.png' mode="widthFill"/>
+                        <text class="btn_name">我的足迹</text>
                     </view>
-                    <view class="btn-row" bindtap="My_appointment">
-                        <image class="btn-image" src='../../images/appointment.png' mode="aspectFit"/>
-                        <text class="btn-description">我的收藏</text>
+                    <view class="btns" bindtap="My_appointment">
+                        <image class="btn_img" src='../../images/appointment.png' mode="widthFill"/>
+                        <text class="btn_name">我的收藏</text>
                     </view>
-                    <view class="btn-row" bindtap="My_coupon">
-                        <image class="btn-image" src='../../images/coupon.png' mode="aspectFit"/>
-                        <text class="btn-description">我的优惠券</text>
-                    </view>     
+                    <view class="btns" bindtap="My_coupon">
+                        <image class="btn_img" src='../../images/coupon.png' mode="widthFill"/>
+                        <text class="btn_name">我的优惠券</text>
+                    </view>
                 </view>   
             </view>
         </view> 

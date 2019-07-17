@@ -4,13 +4,13 @@
             <block wx:for="{{History_Item}}" wx:key="" >
                 <view wx:if="{{item.Item_Img != ''&&item.Item_Img != undefined}}" class="Cart_Item" id = "{{item.id}}" bindtap="gotoItem">
                     <view class="Item_left">
-                        <block wx:if="{{index==0}}">
+                        <!-- <block wx:if="{{index==0}}">
                             <text class="selected">1</text>
                         </block>
 
-                        <block wx:else="{{}}">
-                            <text class="selected">{{index}}</text>
-                        </block>
+                        <block wx:else="{{}}"> -->
+                            <text class="selected">{{index+1}}</text>
+                        <!-- </block> -->
                         <image class="Item_image" src="{{item.Item_Img}}"/>
                     </view>
                     <view class="Item_right">
