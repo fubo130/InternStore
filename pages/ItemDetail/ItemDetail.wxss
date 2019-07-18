@@ -103,6 +103,14 @@
     flex-direction: row;
 }
 
+.btn-1 .bt-style {
+    background-image: url("http://cd7.yesapi.net/74928B74E87AC199A83A17EEDB749F0A_20190718175740_ea7ff0be961e45d5acba6bade3b733d9.png");
+    width: 100%;
+    height: 63%;
+    background-size: 100% 100%;
+    border: none;
+}
+
 .btn-area .btn2 {
     width: 32%;
     height: 100%-20rpx;

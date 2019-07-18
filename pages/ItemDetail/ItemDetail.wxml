@@ -128,7 +128,8 @@
     <view class = "btn-area">
         <view class="btn1">
             <view class="btn-1">
-                <image src="../../images/cs.png" mode="widthFix" style="width: 100%"></image>
+                <button class="bt-style" plain="true" open-type="contact"/>
+                <!-- <image src="../../images/cs.png" mode="widthFix" style="width: 100%"></image> -->
                 客服
             </view>
 
