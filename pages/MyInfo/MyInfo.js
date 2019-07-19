@@ -126,6 +126,14 @@ Page({
             })
             console.log("Not Valid Phone Number!!!");
         }
+        else if (!/([\w\-]+\@[\w\-]+\.[\w\-]+)/.test(res.detail.value.Email)) {
+            wx.showToast({
+                title: '邮箱号码不正确',
+                icon: 'none',
+                duration: 1500
+            })
+            console.log("Not Valid Email Address!!!");
+        }
         else {
             var info = res.detail.value;
             var tmp = JSON.stringify(info);
@@ -141,9 +149,9 @@ Page({
                     if (res.data && res.data.err_code == 0) {
                         // TODO：请求成功
                         console.log('ok: ', res.data)
-                        // wx.switchTab({
-                        //     url: '../User/User',
-                        // })
+                        wx.switchTab({
+                            url: '../User/User',
+                        })
                         wx.showToast({
                             title: '信息添加成功',
                             icon: 'none',

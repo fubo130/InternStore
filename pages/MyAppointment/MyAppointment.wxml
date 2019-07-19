@@ -2,18 +2,18 @@
     <view class="Cart_area">
         <block wx:if="{{orderItems.length > 0}}">
             <block wx:for="{{orderItems}}" wx:key="" >
-                <view class="Cart_Item" id = "{{index}}" bindtap="toItem">
-                    <view class="Item_left"  bindtap="gotoItem">
+                <view class="Cart_Item" id = "{{index}}" >
+                    <view class="Item_left"  bindtap="toItem" id = "{{index}}">
                         <text class="selected">{{index+1}}</text>
                         <image class="Item_image" src="{{item.Item_Img}}"/>
                     </view>
-                    <view class="Item_right"  bindtap="gotoItem">
+                    <view class="Item_right"  bindtap="toItem" id = "{{index}}">
                         <view class="Desc">
                             <text class ="itemNm">{{item.Item_Name}}</text>
                             <text class ="itemDs">{{item.Item_Desc}}</text>
                             
                         </view>
-                        <view class="Bottom-area"  bindtap="gotoItem">
+                        <view class="Bottom-area"  bindtap="toItem" id = "{{index}}">
                             <text class="Price">¥{{itemPrice[index]}}</text>
                             <view class="num">已降价¥1800.00</view>
                         </view>

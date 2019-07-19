@@ -150,6 +150,9 @@
     right: 50rpx;
     left: auto;
     margin-top: 10rpx;
+    z-index: 1000;
+    /* border: 1rpx solid red; */
+    /* background-color: black; */
     /* top: 10rpx;
     bottom: auto; */
     /* z-index: 999; */
