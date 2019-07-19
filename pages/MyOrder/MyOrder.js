@@ -187,7 +187,6 @@ Page({
     delateItem: function(res) {
         var that = this;
         // console.log(res)
-        
         wx.showModal({
             title: '提示',
             content: '您确定要删除这个物品么？',

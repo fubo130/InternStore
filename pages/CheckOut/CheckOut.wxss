@@ -7,7 +7,7 @@
 
 .bkg .Address {
     min-height: 200rpx;
-    margin-top: 5rpx;
+    margin-top: 20rpx;
     margin-bottom: 20rpx;
     display: flex;
     flex-direction: row;

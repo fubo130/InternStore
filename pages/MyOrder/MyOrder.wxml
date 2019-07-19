@@ -6,18 +6,18 @@
 
                 <block wx:if="{{Order_selected[index]==0}}">
                     <view class="Cart_Item" id = "{{index}}">
-                        <view class="Item_left"  bindtap="gotoItem" id = "{{index}}">
+                        <view class="Item_left"   id = "{{index}}">
                             <text class="selected">{{index+1}}</text>
                             <image class="Item_image" src="{{item.Item_Img}}"/>
                         </view>
-                        <view class="Item_right"  bindtap="gotoItem" id = "{{index}}">
+                        <view class="Item_right"   id = "{{index}}">
                             <view class="Desc">
                                 <text class ="itemNm">{{item.Item_Name}}</text>
                                 <text class ="itemDs">{{item.Item_Desc}}</text>
                                 
                             </view>
                             <progress class="progress" percent="{{perc[index]}}" border-radius="60" stroke-width="8" active />
-                            <view class="Bottom-area"  bindtap="gotoItem" id = "{{index}}">
+                            <view class="Bottom-area"   id = "{{index}}">
                                 <text class="Price">¥{{itemPrice[index]}}</text>
 
                                 <view class="num">
