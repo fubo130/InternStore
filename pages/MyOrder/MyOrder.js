@@ -10,7 +10,9 @@ Page({
         orderItems: [],
         itemPrice: [],
         itemStatus: [],
-        tmp: {}
+        tmp: {},
+        Order_selected: [],
+        perc: []
     },
 
     /**
@@ -36,10 +38,12 @@ Page({
                 st = res.data.data.data.Order_Status.split(",");
                 let glo=[];
                 var v = [];
+                var tm = [];
                 for (var i = 0; i < l.length; i++) {
                     m.push(parseInt(l[i]));
                     // glo.push(i,parseInt(l[i]))
                     v.push(i);
+                    tm.push(0);
                 }
                 
                 console.log("st", st);
@@ -49,7 +53,9 @@ Page({
                     itList: m,
                     itemStatus: st,
                     userID: res.data.data.data.id,
-                    tmp: glo
+                    tmp: glo,
+                    Order_selected: tm,
+                    
                 })
                 console.log("Item list: ", that.data.itList);
             },
@@ -96,6 +102,22 @@ Page({
                     },
                     fail() {},
                     complete() {
+                        var lt = [];
+                        for(var i = 0; i < that.data.itemStatus.length; i++) {
+                            if (that.data.itemStatus[i] == 1) {
+                                lt.push(25);
+                            }
+                            else if (that.data.itemStatus[i] == 2) {
+                                lt.push(75)
+                            }
+                            else if (that.data.itemStatus[i] == 3) {
+                                lt.push(100)
+                            }
+                        }
+                        console.log(lt)
+                        that.setData({
+                            perc: lt
+                        })
                         wx.hideLoading();
                     }
                 })
@@ -211,5 +233,18 @@ Page({
                 }
             }
         })  
+    },
+
+    gotoItem:function(options) {
+        console.log(options.currentTarget.id);
+        var list = this.data.Order_selected;
+        for (var i = 0; i < list.length; i++) {
+            list[i] = 0;
+        }
+        list[options.currentTarget.id] = 1;
+        console.log(list);
+        this.setData({
+            Order_selected: list
+        })
     }
 })

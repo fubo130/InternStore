@@ -46,8 +46,8 @@
 }
 
 .btns .btn_img {
-    height: 95%;
-    width: 100rpx;
+    height: 80%;
+    width: 80rpx;
     /* margin-left: 1%; */
     /* border: 1rpx solid green; */
 }
