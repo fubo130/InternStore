@@ -1,4 +1,5 @@
 <view class="container">
+    <!-- <view class="act_title">欧皇抽奖福利！</view> -->
   停止位置:<input value='{{luckPosition}}' style="width:100%;text-align:center" bindinput='input' type='number'></input>
     <view class='frame_view'>
         <view class='frame_row'>

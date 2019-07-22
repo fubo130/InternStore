@@ -10,32 +10,114 @@
                             <text class="selected">{{index+1}}</text>
                             <image class="Item_image" src="{{item.Item_Img}}"/>
                         </view>
-                        <view class="Item_right"   id = "{{index}}">
-                            <view class="Desc">
-                                <text class ="itemNm">{{item.Item_Name}}</text>
-                                <text class ="itemDs">{{item.Item_Desc}}</text>
-                                
-                            </view>
-                            <progress class="progress" percent="{{perc[index]}}" border-radius="60" stroke-width="8" active />
-                            <view class="Bottom-area"   id = "{{index}}">
-                                <text class="Price">¥{{itemPrice[index]}}</text>
 
-                                <view class="num">
-                                    <block wx:if="{{itemStatus[index]=='1'}}">
-                                        订单处理中
-                                        <!-- <image class="min" src="../../images/processing.png" id="{{index}}"></image> -->
-                                    </block>
+                        <block wx:if="{{itemStatus[index]=='1'}}">
+                            <view class="Item_right" style="background:url('../../images/processing.png'); background-position: 90% 0%; background-size: 40%; background-repeat: no-repeat;"  id = "{{index}}">
+                                <view class="Desc">
+                                    <text class ="itemNm">{{item.Item_Name}}</text>
+                                    <text class ="itemDs">{{item.Item_Desc}}</text>
+                                    
+                                </view>
+                                <progress class="progress" percent="{{perc[index]}}" border-radius="60" stroke-width="8" active />
+                                <view class="Bottom-area"   id = "{{index}}">
+                                    <text class="Price">¥{{itemPrice[index]}}</text>
 
-                                    <block wx:if="{{itemStatus[index]=='2'}}">
-                                        <!-- <image class="min" src="../../images/trans.png" id="{{index}}"></image> -->                      快递运送中
-                                    </block>
+                                    <view class="num">
+                                        <block wx:if="{{itemStatus[index]=='1'}}">
+                                            <!-- <view style="background:url('../../images/processing.png'); background-position: 80%; background-size: 90%; background-repeat: no-repeat;"> -->
+                                                订单处理中
+                                            <!-- </view> -->
+                                            <!-- <image class="min" src="../../images/processing.png" id="{{index}}"></image> -->
+                                        </block>
 
-                                    <block wx:if="{{itemStatus[index]=='3'}}">
-                                        <!-- <image class="min" src="../../images/signed.png" id="{{index}}"></image> -->                      已签收
-                                    </block>
+                                        <block wx:if="{{itemStatus[index]=='2'}}">
+                                            <!-- <image class="min" src="../../images/trans.png" id="{{index}}"></image> -->                      快递运送中
+                                        </block>
+
+                                        <block wx:if="{{itemStatus[index]=='3'}}">
+                                            <!-- <image class="min" src="../../images/signed.png" id="{{index}}"></image> -->             
+                                            <!-- <view style="background:url('../../images/signed.png'); background-position: 80%; background-size: 90%; background-repeat: no-repeat; z-index: 20">  -->
+                                                已签收
+                                            <!-- </view> -->
+                                        </block>
+                                    </view>
                                 </view>
                             </view>
-                        </view>
+                        </block>
+
+
+                        <block wx:if="{{itemStatus[index]=='2'}}">
+                            <view class="Item_right" style="background:url('../../images/trans.png'); background-position: 90% 0%; background-size: 45%; background-repeat: no-repeat;"  id = "{{index}}">
+                                <view class="Desc">
+                                    <text class ="itemNm">{{item.Item_Name}}</text>
+                                    <text class ="itemDs">{{item.Item_Desc}}</text>
+                                    
+                                </view>
+                                <progress class="progress" percent="{{perc[index]}}" border-radius="60" stroke-width="8" active />
+                                <view class="Bottom-area"   id = "{{index}}">
+                                    <text class="Price">¥{{itemPrice[index]}}</text>
+
+                                    <view class="num">
+                                        <block wx:if="{{itemStatus[index]=='1'}}">
+                                            <!-- <view style="background:url('../../images/processing.png'); background-position: 80%; background-size: 90%; background-repeat: no-repeat;"> -->
+                                                订单处理中
+                                            <!-- </view> -->
+                                            <!-- <image class="min" src="../../images/processing.png" id="{{index}}"></image> -->
+                                        </block>
+
+                                        <block wx:if="{{itemStatus[index]=='2'}}">
+                                            <!-- <image class="min" src="../../images/trans.png" id="{{index}}"></image> -->                      快递运送中
+                                        </block>
+
+                                        <block wx:if="{{itemStatus[index]=='3'}}">
+                                            <!-- <image class="min" src="../../images/signed.png" id="{{index}}"></image> -->             
+                                            <!-- <view style="background:url('../../images/signed.png'); background-position: 80%; background-size: 90%; background-repeat: no-repeat; z-index: 20">  -->
+                                                已签收
+                                            <!-- </view> -->
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+
+
+
+                        <block wx:if="{{itemStatus[index]=='3'}}">
+                            <view class="Item_right" style="background:url('../../images/signed.png'); background-position: 90% 0%; background-size: 40%; background-repeat: no-repeat;"  id = "{{index}}">
+                                <view class="Desc">
+                                    <text class ="itemNm">{{item.Item_Name}}</text>
+                                    <text class ="itemDs">{{item.Item_Desc}}</text>
+                                    
+                                </view>
+                                <progress class="progress" percent="{{perc[index]}}" border-radius="60" stroke-width="8" active />
+                                <view class="Bottom-area"   id = "{{index}}">
+                                    <text class="Price">¥{{itemPrice[index]}}</text>
+
+                                    <view class="num">
+                                        <block wx:if="{{itemStatus[index]=='1'}}">
+                                            <!-- <view style="background:url('../../images/processing.png'); background-position: 80%; background-size: 90%; background-repeat: no-repeat;"> -->
+                                                订单处理中
+                                            <!-- </view> -->
+                                            <!-- <image class="min" src="../../images/processing.png" id="{{index}}"></image> -->
+                                        </block>
+
+                                        <block wx:if="{{itemStatus[index]=='2'}}">
+                                            <!-- <image class="min" src="../../images/trans.png" id="{{index}}"></image> -->                      快递运送中
+                                        </block>
+
+                                        <block wx:if="{{itemStatus[index]=='3'}}">
+                                            <!-- <image class="min" src="../../images/signed.png" id="{{index}}"></image> -->             
+                                            <!-- <view style="background:url('../../images/signed.png'); background-position: 80%; background-size: 90%; background-repeat: no-repeat; z-index: 20">  -->
+                                                已签收
+                                            <!-- </view> -->
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+
+
+
                         <image class = "close" src = "../../images/close.png" bindtap="delateItem" mode = "widthFill" id = "{{index}}"></image>
                     </view>
                 </block>
@@ -47,6 +129,7 @@
 
         <block wx:else="{{}}">
             <view class="Empty">
+                
                 <image class="EmptyBg" src="../../images/EmptyCart.png" >
                 </image>
                 <text class="EmptyTitle">

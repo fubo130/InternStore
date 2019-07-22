@@ -139,6 +139,7 @@
     flex-direction: row;
     margin-left: 5%;
     margin-right: 10%;
+    border-bottom: 1rpx solid rgb(226, 226, 226);
 }
 
 .itemDs {

@@ -22,6 +22,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        wx.showLoading({
+            title: '请稍后......',
+        })
         if(options.userID!=undefined) {
             this.setData({
                 userID: options.userID,
@@ -44,6 +47,9 @@ Page({
                 console.log(that.data.Email);
                 console.log(that.data.Address);
                 console.log(that.data.tableID);
+            },
+            complete() {
+                wx.hideLoading();
             }
         })
 
@@ -53,7 +59,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        
     },
 
     /**
@@ -81,7 +87,6 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
     },
 
     /**

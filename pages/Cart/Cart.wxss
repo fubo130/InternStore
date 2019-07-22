@@ -134,19 +134,24 @@ page {
 }
 
 .itemNm {
-    
     font-size: 40rpx;
     margin: auto auto;
+    /* padding: auto auto; */
+    /* line-height: -60rpx; */
     display: flex;
     flex-direction: row;
     margin-left: 5%;
     margin-right: 10%;
+    height: fit-content;
+    border-bottom: 1rpx solid rgb(226, 226, 226);
 }
 
 .itemDs {
+    height: fit-content;
     font-size: 30rpx;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 .Item_right .Bottom-area {
