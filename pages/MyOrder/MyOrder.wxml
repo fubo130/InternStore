@@ -47,7 +47,7 @@
 
 
                         <block wx:if="{{itemStatus[index]=='2'}}">
-                            <view class="Item_right" style="background:url('http://cd7.yesapi.net/74928B74E87AC199A83A17EEDB749F0A_20190722110955_085dec0e0182c5f4a3580153551a698f.png'); background-position: 90% 0%; background-size: 45%; background-repeat: no-repeat;"  id = "{{index}}">
+                            <view class="Item_right" style="background:url('http://cd7.yesapi.net/74928B74E87AC199A83A17EEDB749F0A_20190722110955_085dec0e0182c5f4a3580153551a698f.png'); background-position: 90% 0%; background-size: 48%; background-repeat: no-repeat;"  id = "{{index}}">
                                 <view class="Desc">
                                     <text class ="itemNm">{{item.Item_Name}}</text>
                                     <text class ="itemDs">{{item.Item_Desc}}</text>
