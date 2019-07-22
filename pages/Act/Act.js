@@ -10,14 +10,22 @@ Page({
     data: {
         color: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
         //9张奖品图片
-        images: ['../../images/item.png', '../../images/item1.png', '../../images/item.png', '../../images/item1.png', '../../images/item.png', '../../images/item1.png', '../../images/item.png', '../../images/item1.png', '../../images/item.png'],
+        images: ['../../images/prize.png', '../../images/prize1.png', '../../images/prize.png', '../../images/prize1.png', '../../images/prize.png', '../../images/prize1.png', '../../images/prize.png', '../../images/prize1.png', '../../images/prize.png'],
         btnconfirm: '../../images/dianjichoujiang.png',
         clickLuck: 'clickLuck',
-        luckPosition: 3,
+        luckPosition: 0,
     },
 
     onLoad: function () {
+        wx.showLoading({
+            title: '请稍后......',
+        })
         this.loadAnimation();
+        var that = this;
+        that.setData({
+            luckPosition: Math.floor(Math.random()*7)
+        })
+        wx.hideLoading();
     },
 
     input: function (e) {
@@ -148,11 +156,12 @@ Page({
                             success: function (res) {
                                 if (res.confirm) {
                                     //设置按钮可以点击
-                                    e.setData({
-                                        btnconfirm: '/images/dianjichoujiang.png',
-                                        clickLuck: 'clickLuck',
-                                    })
-                                    e.loadAnimation();
+                                    // e.setData({
+                                    //     btnconfirm: '/images/dianjichoujiang.png',
+                                    //     clickLuck: 'clickLuck',
+                                    // })
+                                    // e.loadAnimation();
+                                    e.onLoad();
                                 }
                             }
                         })
@@ -165,11 +174,12 @@ Page({
                             success: function (res) {
                                 if (res.confirm) {
                                     //设置按钮可以点击
-                                    e.setData({
-                                        btnconfirm: '/images/dianjichoujiang.png',
-                                        clickLuck: 'clickLuck',
-                                    })
-                                    e.loadAnimation();
+                                    // e.setData({
+                                    //     btnconfirm: '/images/dianjichoujiang.png',
+                                    //     clickLuck: 'clickLuck',
+                                    // })
+                                    // e.loadAnimation();
+                                    e.onLoad();
                                 }
                             }
                         })

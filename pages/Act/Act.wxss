@@ -10,7 +10,7 @@
   width:590rpx;
   height:590rpx;
   padding: 20rpx;
-  background: #792db3;
+  /* background: #792db3; */
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -28,8 +28,12 @@
   align-items: center;
 } 
 .frame_item{
+  opacity: 20%;
   width:180rpx;
   height:180rpx;
+  background: #885aaa;
+  border-radius: 10%;
+  /* border: 1rpx dashed currentColor; */
 }
 
 /* .container .act_title {
