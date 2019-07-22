@@ -23,7 +23,11 @@ Page({
         this.loadAnimation();
         var that = this;
         that.setData({
-            luckPosition: Math.floor(Math.random()*7)
+            luckPosition: Math.floor(Math.random()*7),
+            color: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+            images: ['../../images/prize.png', '../../images/prize1.png', '../../images/prize.png', '../../images/prize1.png', '../../images/prize.png', '../../images/prize1.png', '../../images/prize.png', '../../images/prize1.png', '../../images/prize.png'],
+            btnconfirm: '../../images/dianjichoujiang.png',
+            clickLuck: 'clickLuck',
         })
         wx.hideLoading();
     },
@@ -160,7 +164,7 @@ Page({
                                         btnconfirm: '/images/dianjichoujiang.png',
                                         clickLuck: 'clickLuck',
                                     })
-                                    e.loadAnimation();
+                                    // e.loadAnimation();
                                     e.onLoad();
                                 }
                             }
@@ -178,7 +182,7 @@ Page({
                                         btnconfirm: '/images/dianjichoujiang.png',
                                         clickLuck: 'clickLuck',
                                     })
-                                    e.loadAnimation();
+                                    // e.loadAnimation();
                                     e.onLoad();
                                 }
                             }

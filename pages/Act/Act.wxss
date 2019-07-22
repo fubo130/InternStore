@@ -38,13 +38,13 @@
   border: 1rpx solid currentColor;
 }
 
-/* .frame_item1 {
+.frame_item1 {
   opacity: 20%; 
   width:180rpx;
   height:180rpx;
   background: #b32f7c;
   border-radius: 10%;
-} */
+}
 
 /* .container .act_title {
     position: relative;
