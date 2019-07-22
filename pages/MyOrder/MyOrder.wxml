@@ -12,7 +12,7 @@
                         </view>
 
                         <block wx:if="{{itemStatus[index]=='1'}}">
-                            <view class="Item_right" style="background:url('../../images/processing.png'); background-position: 90% 0%; background-size: 40%; background-repeat: no-repeat;"  id = "{{index}}">
+                            <view class="Item_right" style="background:url('http://cd7.yesapi.net/74928B74E87AC199A83A17EEDB749F0A_20190722110942_a37525d332df1957071809cd6bd04cb7.png'); background-position: 90% 0%; background-size: 40%; background-repeat: no-repeat;"  id = "{{index}}">
                                 <view class="Desc">
                                     <text class ="itemNm">{{item.Item_Name}}</text>
                                     <text class ="itemDs">{{item.Item_Desc}}</text>
@@ -47,7 +47,7 @@
 
 
                         <block wx:if="{{itemStatus[index]=='2'}}">
-                            <view class="Item_right" style="background:url('../../images/trans.png'); background-position: 90% 0%; background-size: 45%; background-repeat: no-repeat;"  id = "{{index}}">
+                            <view class="Item_right" style="background:url('http://cd7.yesapi.net/74928B74E87AC199A83A17EEDB749F0A_20190722110955_085dec0e0182c5f4a3580153551a698f.png'); background-position: 90% 0%; background-size: 45%; background-repeat: no-repeat;"  id = "{{index}}">
                                 <view class="Desc">
                                     <text class ="itemNm">{{item.Item_Name}}</text>
                                     <text class ="itemDs">{{item.Item_Desc}}</text>
@@ -83,7 +83,7 @@
 
 
                         <block wx:if="{{itemStatus[index]=='3'}}">
-                            <view class="Item_right" style="background:url('../../images/signed.png'); background-position: 90% 0%; background-size: 40%; background-repeat: no-repeat;"  id = "{{index}}">
+                            <view class="Item_right" style="background:url('	http://cd7.yesapi.net/74928B74E87AC199A83A17EEDB749F0A_20190722111006_7f1a0ebb99983736f6601f60ba60fd62.png'); background-position: 90% 0%; background-size: 40%; background-repeat: no-repeat;"  id = "{{index}}">
                                 <view class="Desc">
                                     <text class ="itemNm">{{item.Item_Name}}</text>
                                     <text class ="itemDs">{{item.Item_Desc}}</text>
