@@ -156,11 +156,11 @@ Page({
                             success: function (res) {
                                 if (res.confirm) {
                                     //设置按钮可以点击
-                                    // e.setData({
-                                    //     btnconfirm: '/images/dianjichoujiang.png',
-                                    //     clickLuck: 'clickLuck',
-                                    // })
-                                    // e.loadAnimation();
+                                    e.setData({
+                                        btnconfirm: '/images/dianjichoujiang.png',
+                                        clickLuck: 'clickLuck',
+                                    })
+                                    e.loadAnimation();
                                     e.onLoad();
                                 }
                             }
@@ -174,11 +174,11 @@ Page({
                             success: function (res) {
                                 if (res.confirm) {
                                     //设置按钮可以点击
-                                    // e.setData({
-                                    //     btnconfirm: '/images/dianjichoujiang.png',
-                                    //     clickLuck: 'clickLuck',
-                                    // })
-                                    // e.loadAnimation();
+                                    e.setData({
+                                        btnconfirm: '/images/dianjichoujiang.png',
+                                        clickLuck: 'clickLuck',
+                                    })
+                                    e.loadAnimation();
                                     e.onLoad();
                                 }
                             }
