@@ -253,7 +253,7 @@
   - 5.4 购物车页面  
     + ![CartPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/cart.gif)  
   - 5.5 用户页面  
-    + ![UserPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/user.PNG)  
+    + ![UserPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/user.png)  
   - 5.6 我的订单  
     + ![LikePage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/order.gif)  
   - 5.7 商品详情  
