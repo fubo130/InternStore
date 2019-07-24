@@ -259,8 +259,15 @@
   - 5.7 商品详情  
     + ![ItemDetailPage1](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/itemDetail.gif)  
   - 5.8 结算页面  
-    + ![CheckOut1](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/checkOut.gif) 
-
+    + ![CheckOut1](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/checkOut.gif)     
+    
+  - 5.9 客服系统
+    - 自动回复    
+      ![CSPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/cs.gif)    
+       
+    - 在线客服    
+      ![CSPage](https://raw.githubusercontent.com/fubo130/InternStore/master/screenShot/cs.PNG)     
+          
 ## 6. 项目管理员
 
  - 6.1 管理员：付博
