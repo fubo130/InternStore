@@ -9,7 +9,7 @@
                 <view class="Item_right">
                     <view class="Desc">
                         <text class ="itemNm" bindtap="toItem" id = "{{index}}" >{{item.Item_Name}}</text>
-                        <text class ="itemDs" bindtap="toItem" id = "{{index}}" >{{item.Item_Desc}}</text>
+                        <view style=" word-break: break-all" class ="itemDs" bindtap="toItem" id = "{{index}}" >{{item.Item_Desc}}</view>
                     </view>
                     <view class="Bottom-area">
                         <block wx:if="{{Price[index]==0}}">

@@ -135,8 +135,8 @@ page {
 
 .itemNm {
     font-size: 40rpx;
-    margin: auto auto;
-    /* padding: auto auto; */
+    /* margin: auto auto; */
+    padding: 10rpx 10rpx;
     /* line-height: -60rpx; */
     display: flex;
     flex-direction: row;
